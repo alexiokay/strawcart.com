@@ -53,7 +53,7 @@ div(class=" w-full h-full bg-transparent flex flex-col mt-[0.35rem] px-4 ")
     div(class="bg-[#656565]  h-16 w-full ")
       h3(class="text-white text-center w-full h-full text-2xl font-semibold flex items-center justify-center") Improove your process with us
       div(class="flex w-full")
-        img(src="/images" class="")
+        img(src="" class="")
         img(src="" class="")
         img(src="" class="")
         img(src="" class="")
