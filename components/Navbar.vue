@@ -15,7 +15,7 @@ div#navbar-wrapper(class=" w-full text-gray-500 h-full flex flex-col items-cente
     div(class="flex justify-start w-1/2 mt-[0.4rem] space-x-3")
       div(class='flex space-x-1')
         EmailIcon(class="w-4 h-4")
-        p.navbar-text(class="hover:cursor-pointer hover:text-gray-800")  sklep@fsaffas 
+        p.navbar-text(class="hover:cursor-pointer hover:text-gray-800")  biuro@strawcart.com 
       p.navbar-text(class="hover:cursor-pointer hover:text-gray-800")  KONTAKT
     div(class="flex justify-end w-1/2 mt-[0.4rem] space-x-3")
       p.navbar-text(class="hover:cursor-pointer hover:text-gray-800") ZALOGUJ
@@ -26,7 +26,7 @@ div#navbar-wrapper(class=" w-full text-gray-500 h-full flex flex-col items-cente
   hr(class="border-1 border-gray-100 w-full")
   div#navbar-content1(class="flex items-center justify-between w-full h-[4.9rem] text-xs px-3  xl:px-1 xl:w-[82rem] ")
     NuxtLink(class=" " to="/")
-      img#logo(class="h-[4.9rem] " src='/images/skrrtify.png')
+      img#logo(class="h-[4.9rem] " src='/images/strawcart.webp')
     div(class='flex w-[13.3rem] h-[3.1rem] border-[1.2px] mb-2 p-[0.5rem] space-x-2 border-gray-200 items-center justify-center  ')
       div(class="w-12 h-12 flex items-center justify-center")
         IconCart(class="w-full h-full text-gray-500")
@@ -39,17 +39,17 @@ div#navbar-wrapper(class=" w-full text-gray-500 h-full flex flex-col items-cente
     
      
       button#mobile-menu-button(@click="mobileMenu = !MobileMenu" class="block md:hidden") Menu
-
-  
+    
   hr(class="border-[0.1px] border-gray-200  w-full")
+
   div#navbar-content3(class=" relative w-full   px-3  text-base xl:px-5 xl:w-[82rem] h-16 flex items-center justify-end md:justify-around mx-0 tracking-wider text-black  ")
     NavbarDropdown#dropdown(@click="openDropdown" class="dropdown-hidden hidden absolute top-12 left-0 z-50")
-    NuxtLink(class="navbar-text  hidden md:block  hover:text-gray-400  " to="/muzyka") MUZYKA
-    NuxtLink(class="navbar-text  hidden md:block  hover:text-gray-400  " to="/preorder") PREORDER
+    NuxtLink(class="navbar-text  hidden md:block  hover:text-gray-400  " to="/muzyka") KONFIGURACJA
+    NuxtLink(class="navbar-text  hidden md:block  hover:text-gray-400  " to="/preorder") SKLEP
     NuxtLink(@click="openDropdown()" class="navbar-text  hidden md:block  hover:text-gray-400  " to="/wydane-przez-ame-music-group") USLUGI
       
     NuxtLink(class="navbar-text  hidden md:block hover:text-gray-400  " to="/o-nas") O NAS
-    NuxtLink(class="navbar-text  hidden md:block hover:text-gray-400  " to="/wyslij-demo" ) WYSLIJ DEMO
+
     
   hr(class="border-[0.1px] border-gray-200 w-full")
   div#navbar-content2(v-if="route.name!== 'index'" class=" w-full h-12 text-xs px-3  xl:px-5 xl:w-[82rem]  space-x-2 flex items-end justify-start  mx-0 tracking-wider text-gray-500 font-normal ")

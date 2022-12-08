@@ -43,20 +43,19 @@ export default defineNuxtConfig({
     head: {
       charset: "utf-8",
       htmlAttrs: {
-        lang: "pl",
+        lang: "en",
       },
       viewport: "width=device-width, initial-scale=1",
-      title: "OK Graphics - twój grafik komputerowy",
+      title: "Strawcart - your strawberry business partner",
       meta: [
         // <meta name="description" content="My amazing site">
         {
           hid: `description`,
           name: "description",
-          content:
-            "OK Graphics, twój grafik komputerowy, loga, wizytówki, ulotki, plakaty, banery",
+          content: "Strawcart - Upgrade your strawberry business with us",
         },
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      link: [{ rel: "icon", type: "image/x-icon", href: "images/logo.ico" }],
     },
   },
 

@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap:
+Sitemap: strawcart.com/sitemap.xml

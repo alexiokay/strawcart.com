@@ -41,6 +41,8 @@ module.exports = {
     },
     fontFamily: {
       brown: ["BROWN", "sans-serif"],
+      itim: ["ITIM", "sans-serif"],
+      intern: ["INTERN", "sans-serif"],
     },
     screens: {
       'sm': '640px',
