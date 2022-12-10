@@ -1,6 +1,12 @@
 import { defineNuxtConfig } from "nuxt/config";
 import Icons from "unplugin-icons/vite";
+import { IntlifyModuleOptions } from "@intlify/nuxt3";
 
+declare module "@nuxt/schema" {
+  interface NuxtConfig {
+    intlify?: IntlifyModuleOptions;
+  }
+}
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   modules: [
@@ -12,10 +18,11 @@ export default defineNuxtConfig({
         autoImports: ["defineStore", "acceptHMRUpdate"],
       },
     ],
+    "@intlify/nuxt3",
   ],
 
   build: {
-    transpile: ["swiper", "@googlemaps/js-api-loader"],
+    transpile: ["swiper", "@googlemaps/js-api-loader", "@headlessui/vue"],
   },
 
   content: {
@@ -38,13 +45,19 @@ export default defineNuxtConfig({
 
     // Render these routes on the client (SPA) { ssr: false },
   },
+  intlify: {
+    localeDir: "locales",
+    vueI18n: {
+      locale: "en",
+      fallbackLocale: "en",
+      availableLocales: ["en", "id", "ja", "ko", "pl", "de", "zh"],
+    },
+  },
 
   app: {
+    pageTransition: { name: "page", mode: "out-in" },
     head: {
       charset: "utf-8",
-      htmlAttrs: {
-        lang: "en",
-      },
       viewport: "width=device-width, initial-scale=1",
       title: "Strawcart - your strawberry business partner",
       meta: [

@@ -7,7 +7,7 @@ div#products-overwiew(class="w-full flex flex-col items-center justify-around mt
           p(class=" text-xl")  {{h2}} 
           p {{p1}} 
           p {{p2}} 
-      img(:src="img" )
+      img(:src="img" class="object-cover" )
 </template>
 
 <script setup lang="ts">

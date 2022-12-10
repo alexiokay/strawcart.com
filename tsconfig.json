@@ -15,7 +15,8 @@
       "unplugin-icons/types/vue",
       "pinia-plugin-persist",
       "pinia",
-      "vitest/globals"
+      "vitest/globals",
+      "@intlify/nuxt3",
 
     ],
     "paths": {

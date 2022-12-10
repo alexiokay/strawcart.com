@@ -1,0 +1,130 @@
+components:
+  language_switcher:
+    change_language: zmień język
+  theme_switcher:
+    theme: motyw
+    change_theme: zmień motyw
+  advantages:
+    income_productivity:
+      title: zwiększa dochód i produktywność
+      description: >-
+        dzięki naszym produktom możesz zwiększyć swoje dochody o 20% i
+        produktywność o 30%
+    framework:
+      title: ramy o sprawdzonej wartości
+      description: nasze produkty są testowane i cieszą się zaufaniem naszych klientów
+    peak_experience:
+      title: szczytowe doświadczenie
+      description: podnosi morale pracownika
+    support:
+      title: obsługa klienta
+      description: uzyskaj pomoc od naszego zespołu wsparcia w ciągu 24 godzin
+    sustainability:
+      title: zrównoważony rozwój
+      description: >-
+        nawet strawcart pro jest ładowany przez panele słoneczne, więc nie
+        musisz przejmować się elektrycznością
+    customization:
+      title: dostosowywanie
+      description: dostosuj wysokość, półkę
+  strawcart_showcase:
+    title: ulepsz swoją farmę truskawek za pomocą strawcart
+    description: >-
+      ten pomysł pochodzi ze szwajcarii i wprowadza sprawdzony system na twoją
+      plantację. stworzony, aby zmaksymalizować dochody, renomę i morale
+      pracowników :) przekształć swój biznes w lokalnego hegemona.
+    pricing: kup 770 $ / wynajmij 60 $
+    button: kup teraz
+  product_overwiew:
+    straw_box:
+      h1: pudełka kartonowe na truskawki
+      h2: końcowe pudełko produktu, gotowe do sprzedaży!
+      p1: >-
+        nadaje prestiżowemu produktowi ścinki. idealne, jeśli chcesz zwiększyć
+        dochody swojej firmy.
+      p2: >-
+        rozciąganie folii o pojemności 500 gramów gratis przy zamówieniach
+        powyżej 300 sztuk.
+    straw_tote:
+      h1: składany
+      h2: zawiera miejsce na 8 sztuk skrzynki na słomki
+      p1: zaprojektowany, aby zaoszczędzić miejsce w magazynie,
+      p2: zaprojektowany, aby zaoszczędzić miejsce w magazynie,
+    straw_shop:
+      h1: sprzedawaj gdzie chcesz
+      h2: sprzedawaj prestiż ze strawshop na całym świecie!
+      p1: >-
+        wybierz oryginalny szyld strawcart.com lub wybierz własny. składane
+        rozmiary 2x2 m2.
+    straw_warehouse:
+      h1: mobilny magazyn terenowy
+      h2: bufor dla twojego produktu!
+      p1: >-
+        przeznaczone do czasowego składowania do 6 palet do czasu przybycia
+        transportu na wjazd do chłodni.
+      p2: chroni truskawki przed silnym słońcem,
+pages:
+  '404':
+    title: strona nie znaleziona
+  shop:
+    nav: sklep
+  index:
+    title: nuxt 3[]niesamowity[]starter
+  blank:
+    nav: pusty
+    title: pusta strona
+    description: to jest pusta strona
+    just_blank_page_with_title: tylko pusta strona z tytułem
+  configurator:
+    nav: konfigurator
+    title: poczta
+    description: to jest strona z postami
+  test:
+    nav: test
+    title: testowanie
+    description: to jest strona testowa
+    counter: licznik
+    increment: przyrost
+    decrement: spadek
+    reset: resetowanie
+    identity: tożsamość
+    full_name: pełna nazwa
+  getting-started:
+    nav: zacząć
+    title: zacząć
+    description: to jest strona dla początkujących
+  setting:
+    nav: ustawienie
+    title: ustawienie
+    description: to jest strona ustawień
+    sections:
+      validate_username:
+        title: sprawdź poprawność profilu github
+        description: >-
+          wpisz swoją nazwę użytkownika github i kliknij przycisk, aby
+          potwierdzić.
+        footer: dowiedz się więcej o
+        footer_button: uprawomocnić
+        footer_link: interfejs użytkownika github
+      bot_id:
+        title: identyfikator bota
+        description: to jest twój identyfikator bota.
+        footer: używane podczas interakcji z botem.
+      protection_spam:
+        title: ochrona przed spamem
+        description: włącz przełącznik, aby usunąć czerwoną ramkę
+        footer: jeśli włączysz, zabezpieczymy twoje komentarze przed spamem
+      advanced_enable_advanced:
+        title: włącz ustawienia zaawansowane
+        description: możesz włączyć ustawienia zaawansowane, aby zmienić ustawienia
+      advanced_dir_listing:
+        title: lista katalogów
+        description: >-
+          jeśli w katalogu nie ma pliku indeksu, zostanie wyświetlona zawartość
+          katalogu.
+  dashboard:
+    nav: panel
+    title: panel
+    index:
+      nav: dom
+      title: dom

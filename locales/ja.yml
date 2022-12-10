@@ -1,0 +1,113 @@
+components:
+  language_switcher:
+    change_language: 言語を変更
+  theme_switcher:
+    theme: テーマ
+    change_theme: テーマを変更
+  advantages:
+    income_productivity:
+      title: 収入と生産性の向上
+      description: 当社の製品のおかげで、収入が 20% 増加し、生産性が 30% 向上します。
+    framework:
+      title: 実績のあるフレームワーク
+      description: 当社の製品はお客様からテストされ、信頼されています。
+    peak_experience:
+      title: ピーク エクスペリエンス
+      description: 従業員の士気を高めます
+    support:
+      title: 顧客サービス
+      description: 24 時間以内にサポート チームからサポートを受ける
+    sustainability:
+      title: 持続可能性
+      description: strawcart proでもソーラーパネルで充電するので電気代は気にしなくていい
+    customization:
+      title: カスタマイズ
+      description: 高さ、棚板をカスタマイズ
+  strawcart_showcase:
+    title: strawcart でイチゴ農園を改善
+    description: >-
+      このアイデアはスイスから来ており、チェックされたシステムをプランテーションにもたらします。収入、レノメ、従業員の士気を最大化するために作られました:)
+      あなたのビジネスを地元のヘゲモンに変えてください。
+    pricing: 購入 770$ / レンタル 60$
+    button: 今すぐ入手
+  product_overwiew:
+    straw_box:
+      h1: いちご用ダンボール箱
+      h2: 最終製品ボックス、販売準備完了!
+      p1: あなたの製品に威信を与えます。ビジネスの収入を増やしたい場合に最適です。
+      p2: 300 を超える注文の場合、500 グラム容量のフォリアを無料でストリーチします。
+    straw_tote:
+      h1: 折りたたみ式
+      h2: ストローボックス8個分のスペース付き。
+      p1: 倉庫のスペースを節約するように設計されています。
+      p2: 倉庫のスペースを節約するように設計されています。
+    straw_shop:
+      h1: 好きな場所で売る
+      h2: 世界中の strawshop で威信を売りましょう!
+      p1: オリジナルの strawcart.com 看板を使用するか、独自の看板を選択してください。折りたたみ式の 2x2 m2 サイズ。
+    straw_warehouse:
+      h1: 移動式フィールド ウェアハウス
+      h2: あなたの製品のためのバッファ！
+      p1: コールドストアに入る輸送の到着まで、最大6パレットまでの一時保管を目的としています。
+      p2: 強い日差しからいちごを守り、
+pages:
+  '404':
+    title: ページが見つかりません
+  shop:
+    nav: 店
+  index:
+    title: nuxt 3[]素晴らしい[]スターター
+  blank:
+    nav: 空欄
+    title: 空白ページ
+    description: これは空白のページです
+    just_blank_page_with_title: タイトルのある空白のページ
+  configurator:
+    nav: コンフィギュレータ
+    title: 役職
+    description: これは投稿ページです
+  test:
+    nav: テスト
+    title: テスト
+    description: これはテストページです
+    counter: カウンター
+    increment: インクリメント
+    decrement: デクリメント
+    reset: リセット
+    identity: 身元
+    full_name: フルネーム
+  getting-started:
+    nav: 入門
+    title: 入門
+    description: これは入門ページです
+  setting:
+    nav: 設定
+    title: 設定
+    description: 設定ページです
+    sections:
+      validate_username:
+        title: github プロファイルを検証する
+        description: github ユーザー名を入力し、ボタンをクリックして検証します。
+        footer: 詳しくはこちら
+        footer_button: 検証
+        footer_link: github ユーザー api
+      bot_id:
+        title: ボットid
+        description: これがボット id です。
+        footer: ボットと対話するときに使用されます。
+      protection_spam:
+        title: スパム保護
+        description: 有効に切り替えて、赤い枠を削除します
+        footer: 有効にすると、コメントをスパムから保護します
+      advanced_enable_advanced:
+        title: 詳細設定を有効にする
+        description: 詳細設定を有効にして設定を変更できます
+      advanced_dir_listing:
+        title: ディレクトリ一覧
+        description: ディレクトリ内にインデックス ファイルが存在しない場合は、ディレクトリの内容が表示されます。
+  dashboard:
+    nav: ダッシュボード
+    title: ダッシュボード
+    index:
+      nav: 家
+      title: 家

@@ -1,0 +1,113 @@
+components:
+  language_switcher:
+    change_language: 언어 변경
+  theme_switcher:
+    theme: 주제
+    change_theme: 테마 변경
+  advantages:
+    income_productivity:
+      title: 소득과 생산성을 향상시킵니다.
+      description: 당사 제품 덕분에 소득을 20%, 생산성을 30% 높일 수 있습니다.
+    framework:
+      title: 검증된 가치 프레임워크
+      description: 당사의 제품은 고객이 테스트하고 신뢰합니다.
+    peak_experience:
+      title: 피크 경험
+      description: 직원의 사기를 높입니다
+    support:
+      title: 고객 서비스
+      description: 24시간 내에 지원팀의 도움을 받으세요.
+    sustainability:
+      title: 지속 가능성
+      description: strawcart pro도 태양열 패널로 충전되므로 전기 걱정할 필요가 없습니다.
+    customization:
+      title: 커스터마이징
+      description: 높이, 선반 사용자 정의
+  strawcart_showcase:
+    title: strawcart로 딸기 농장 개선
+    description: >-
+      이 아이디어는 스위스에서 왔으며 확인된 시스템을 농장에 가져옵니다. 소득, 인명, 직원의 사기를 극대화하기 위해 만들어졌습니다 :)
+      귀하의 비즈니스를 지역 헤게몬으로 전환하십시오.
+    pricing: 770$ 구매 / 60$ 임대
+    button: 지금 받기
+  product_overwiew:
+    straw_box:
+      h1: 딸기용 판지 상자
+      h2: 최종 제품 상자, 판매 준비 완료!
+      p1: 제품 명성 벌목을 제공합니다. 비즈니스 수입을 늘리고 싶다면 완벽합니다.
+      p2: 300개 이상 주문 시 500g 용량의 폴리아를 무료로 증정합니다.
+    straw_tote:
+      h1: 접을 수 있는
+      h2: strawbox 8개를 위한 공간 포함
+      p1: 창고의 공간을 절약하도록 설계되었으며,
+      p2: 창고의 공간을 절약하도록 설계되었으며,
+    straw_shop:
+      h1: 원하는 곳에서 판매
+      h2: 전 세계 strawshop으로 명성을 판매하십시오!
+      p1: 원래 strawcart.com 간판을 사용하거나 자신의 간판을 선택하십시오. 접을 수 있는 2x2m2 크기.
+    straw_warehouse:
+      h1: 모바일 현장 창고
+      h2: 귀하의 제품을 위한 버퍼!
+      p1: 냉장 창고에 들어가기 위해 운송이 도착할 때까지 최대 6개의 팔레트를 임시로 보관하기 위한 것입니다.
+      p2: 강한 태양으로부터 딸기를 보호하고,
+pages:
+  '404':
+    title: 페이지를 찾을 수 없음
+  shop:
+    nav: 가게
+  index:
+    title: nuxt 3[]awesome[]스타터
+  blank:
+    nav: 공백
+    title: 빈 페이지
+    description: 이것은 빈 페이지입니다
+    just_blank_page_with_title: 제목만 있는 빈 페이지
+  configurator:
+    nav: 구성자
+    title: 게시하다
+    description: 포스트 페이지입니다
+  test:
+    nav: 테스트
+    title: 테스트
+    description: 이것은 테스트 페이지입니다
+    counter: 카운터
+    increment: 증가
+    decrement: 감소
+    reset: 초기화
+    identity: 신원
+    full_name: 성명
+  getting-started:
+    nav: 시작하기
+    title: 시작하기
+    description: 이것은 시작 페이지입니다
+  setting:
+    nav: 환경
+    title: 환경
+    description: 설정 페이지입니다
+    sections:
+      validate_username:
+        title: github 프로필 확인
+        description: github 사용자 이름을 입력하고 버튼을 클릭하여 확인합니다.
+        footer: 자세히 알아보기
+        footer_button: 확인
+        footer_link: github 사용자 api
+      bot_id:
+        title: 봇 아이디
+        description: 귀하의 봇 id입니다.
+        footer: 봇과 상호 작용할 때 사용됩니다.
+      protection_spam:
+        title: 스팸 방지
+        description: 토글 활성화하여 빨간색 테두리 제거
+        footer: 활성화하면 댓글을 스팸으로부터 보호합니다.
+      advanced_enable_advanced:
+        title: 고급 설정 사용
+        description: 고급 설정을 활성화하여 설정을 변경할 수 있습니다.
+      advanced_dir_listing:
+        title: 디렉토리 목록
+        description: 디렉토리 내에 색인 파일이 없으면 디렉토리 내용이 표시됩니다.
+  dashboard:
+    nav: 계기반
+    title: 계기반
+    index:
+      nav: 집
+      title: 집

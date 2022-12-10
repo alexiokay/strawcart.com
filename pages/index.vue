@@ -3,11 +3,11 @@ div(class=" w-full h-full bg-transparent flex flex-col mt-[0.35rem] px-4 ")
   <!-- HEADER -->
   div(class="flex w-full justify-around items-center h-[28rem] mt-16")
     div(class="flex w-2/5 flex-col")
-      h1(class="text-[40px] leading-[138%] font-itim font-inter") Improove your strawberry farm with StrawCart
-      h2(class="leading-[173%] tracking-[2%] text-[20px] mt-8") This idea comes from Switzerland and Brings checked system to your plantation. Made to maximize income, renome and employee’s morale :) Transform your business into local Hegemon.
+      h1(class="text-[40px] leading-[138%] font-itim font-inter") {{$t('components.strawcart_showcase.title')}}
+      h2(class="leading-[173%] tracking-[2%] text-[20px] mt-8") {{$t('components.strawcart_showcase.description')}}
       div(class="flex w-full justify-end space-x-12  items-center mt-12")
-        p BUY 770$ /  RENT 60$
-        button(class="bg-[#CE3030] tracking-[12%] text-2xl drop-shadow-[0.2rem_0.3rem_0.2rem_rgba(0,0,0,0.5)] text-white rounded-lg w-32 font-itim h-12" ) GET NOW
+        p {{$t('components.strawcart_showcase.pricing')}}
+        button(class="bg-[#CE3030] tracking-[12%] text-2xl drop-shadow-[0.2rem_0.3rem_0.2rem_rgba(0,0,0,0.5)] text-white rounded-lg w-32 font-itim min-h-[3rem]" ) {{$t('components.strawcart_showcase.button')}}
     div(class="block relative h-full w-max rounded-xl ")
       img(class=" w-max object-contain drop-shadow-xl rounded-xl border-2   border-[#DADADA]  h-full" src="/images/strawcart-model.jpg")
       img(class="absolute top-0 right-[-65px] w-[10rem] h-[8rem]" src="/images/1-year-warranty.png")
@@ -15,9 +15,9 @@ div(class=" w-full h-full bg-transparent flex flex-col mt-[0.35rem] px-4 ")
  
 
   div.advantage-wrapper1
-    Advantages(:item1="income_producitivity" :item2="faster_funnier" :item3="framework")
+    Advantages(:item1="income_producitivity" :item2="peak_experience" :item3="framework")
   div.advantage-wrapper2
-    Advantages(:item1="item2" :item2="support" :item3="item6")
+    Advantages(:item1="customization" :item2="support" :item3="sustainability")
 
   <!-- hr(class=" w-full border-[0.8px] mt-16 mb-16") -->
   div(class="w-full flex tems-center justify-center mt-16 mb-16")
@@ -30,11 +30,11 @@ div(class=" w-full h-full bg-transparent flex flex-col mt-[0.35rem] px-4 ")
   
 
 
-  ProductOverwiew(h1="Carton boxes for strawberries" h2="FINAL PRODUCT BOX, READY FOR SALE!" p1="Gives your product prestige felling. Perfect if you wish to increase income of your business." p2="500 gram capacity + streaching folia gratis for orders above 300." img="/images/products/strawbox.png" :reversed="false" )
+  ProductOverwiew(:h1="$t('components.product_overwiew.straw_box.h1')" :h2="$t('components.product_overwiew.straw_box.h2')" :p1="$t('components.product_overwiew.straw_box.p1')" :p2="$t('components.product_overwiew.straw_box.p2')" img="/images/products/strawbox.png" :reversed="false" )
 
-  ProductOverwiew(h1="Foldable & space saving Totes" h2="INCLUDES SPACE FOR 8 PIECES OF STRAWBOX" p1="+ Designed to save space in your warehouse," p2="+ Includes space for 8 strawboxes" img="/images/products/strawtote2.png" :reversed="true" )
-  ProductOverwiew(h1="Mobile Field Warehouse" h2="A BUFFER FOR YOUR PRODUCT!" p1="Intended for temporary storage up to 6 pallets until the arrival of the transport to enter the cold store." p2="+ Protects strawberries from strong sun," p3="+ Gives your’s employees a protection from bad weahter." img="/images/products/strawWarehouse.png" )
-  ProductOverwiew(h1="Sell wherever you want" h2="Sell prestige with StrawShop across the world!" p1="Go with original strawcart.com signboard or choose your own. Foldable 2x2 m2 sizes." img="/images/products/strawShop.png" :reversed="true" )
+  ProductOverwiew(:h1="$t('components.product_overwiew.straw_tote.h1')" :h2="$t('components.product_overwiew.straw_box.h2')" :p1="$t('components.product_overwiew.straw_tote.p1')" :p2="$t('components.product_overwiew.straw_tote.p2')" img="/images/products/strawtote2.png" :reversed="true" )
+  ProductOverwiew(:h1="$t('components.product_overwiew.straw_warehouse.h1')" :h2="$t('components.product_overwiew.straw_warehouse.h2')" :p1="$t('components.product_overwiew.straw_warehouse.p1')" :p2="$t('components.product_overwiew.straw_warehouse.p2')" :p3="$t('components.product_overwiew.straw_warehouse.p3')" img="/images/products/strawWarehouse.png" )
+  ProductOverwiew(:h1="$t('components.product_overwiew.straw_shop.h1')" :h2="$t('components.product_overwiew.straw_shop.h2')" :p1="$t('components.product_overwiew.straw_shop.p1')" img="/images/products/strawShop.png" :reversed="true" )
 
   div.cooming-soon(class="relative flex flex-col mt-16 ")
     div(class=" h-[8rem] md:h-[12rem] z-20 flex font-itim flex-col items-center justify-center space-y-4  bg-[#292929] -rotate-6 text-white")
@@ -51,6 +51,7 @@ div(class=" w-full h-full bg-transparent flex flex-col mt-[0.35rem] px-4 ")
 import "vue3-carousel/dist/carousel.css";
 import { ulotki } from "../libs/sliders";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+const { t } = useLang();
 
 type Advantage = {
   title: string;
@@ -66,41 +67,53 @@ const settings = ref({
   transition: 1000,
   wrapAround: true,
 });
+const income_producitivity = computed(() => {
+  return {
+    title: t("components.advantages.income_productivity.title"),
+    description: t("components.advantages.income_productivity.description"),
+    image: "/images/advantages/104.png",
+  };
+});
 
-const income_producitivity = {
-  title: "Increases income and productivity",
-  description:
-    "Thanks to our products you can increase your income by 20% and productivity by 30%",
-  image: "/images/advantages/104.png",
-};
+const customization = computed(() => {
+  return {
+    title: t("components.advantages.customization.title"),
+    description: t("components.advantages.customization.description"),
+    image: "/images/advantages/customization.jpg",
+  };
+});
 
-const item2 = {
-  title: "Customization",
-  description: "customize height, shelf & parts to your needs",
-  image: "/images/advantages/customization.jpg",
-};
-const framework = {
-  title: "Proven value framework",
-  description: "Our products are tested and trusted by our clients",
-  image: "/images/advantages/120.png",
-};
+const framework = computed(() => {
+  return {
+    title: t("components.advantages.framework.title"),
+    description: t("components.advantages.framework.description"),
+    image: "/images/advantages/120.png",
+  };
+});
 
-const faster_funnier = {
-  image: "/images/advantages/appreciation.png",
-  title: "Peak Experience",
-  description: "Increases employee’s morale & your's renoma",
-};
-const support = {
-  image: "/images/advantages/support.png",
-  title: "Customer Service",
-  description: "Get help from our support team in 24h",
-};
-const item6 = {
-  image: "/images/advantages/sustainable.jpg",
-  title: "Sustainability",
-  description:
-    "Even strawcart Pro is charged by solar panels, so you don't need to care about electricity",
-};
+const peak_experience = computed(() => {
+  return {
+    image: "/images/advantages/appreciation.png",
+    title: t("components.advantages.peak_experience.title"),
+    description: t("components.advantages.peak_experience.description"),
+  };
+});
+
+const support = computed(() => {
+  return {
+    image: "/images/advantages/support.png",
+    title: t("components.advantages.support.title"),
+    description: t("components.advantages.support.description"),
+  };
+});
+
+const sustainability = computed(() => {
+  return {
+    image: "/images/advantages/sustainable.jpg",
+    title: t("components.advantages.sustainability.title"),
+    description: t("components.advantages.sustainability.description"),
+  };
+});
 
 const slides = ref([
   {

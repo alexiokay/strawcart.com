@@ -1,0 +1,118 @@
+components:
+  language_switcher:
+    change_language: change language
+  theme_switcher:
+    theme: theme
+    change_theme: change theme
+  advantages:
+    income_productivity:
+      title: Increases income and productivity
+      description: Thanks to our products you can increase your income by 20% and productivity by 30%
+    framework:
+      title: Proven value framework
+      description: Our products are tested and trusted by our clients
+    peak_experience:
+      title: Peak Experience
+      description: Increases employee’s morale & your's renoma
+    support:
+      title: Customer Service
+      description: Get help from our support team in 24h
+    sustainability:
+      title: Sustainability
+      description: Even strawcart Pro is charged by solar panels, so you don't need to care about electricity
+    customization:
+      title: Customization
+      description: customize height, shelf & parts to your needs
+
+  strawcart_showcase:
+    title: Improove your strawberry farm with StrawCart
+    description: This idea comes from Switzerland and Brings checked system to your plantation. Made to maximize income, renome and employee’s morale :) Transform your business into local Hegemon.
+    pricing: BUY 770$ / RENT 60$
+    button: GET NOW
+
+  product_overwiew:
+    straw_box:
+      h1: Carton boxes for strawberries
+      h2: FINAL PRODUCT BOX, READY FOR SALE!
+      p1: Gives your product prestige felling. Perfect if you wish to increase income of your business.
+      p2: 500 gram capacity + streaching folia gratis for orders above 300.
+      p3: null
+    straw_tote:
+      h1: Foldable & space saving Totes
+      h2: INCLUDES SPACE FOR 8 PIECES OF STRAWBOX
+      p1: + Designed to save space in your warehouse,
+      p2: + Designed to save space in your warehouse,
+      p3: null
+    straw_shop:
+      h1: Sell wherever you want
+      h2: Sell prestige with StrawShop across the world!
+      p1: Go with original strawcart.com signboard or choose your own. Foldable 2x2 m2 sizes.
+      p2: null
+      p3: null
+    straw_warehouse:
+      h1: Mobile Field Warehouse
+      h2: A BUFFER FOR YOUR PRODUCT!
+      p1: Intended for temporary storage up to 6 pallets until the arrival of the transport to enter the cold store.
+      p2: + Protects strawberries from strong sun,
+      p3: null
+pages:
+  shop:
+    nav: SHOP
+  index:
+    title: nuxt 3[]awesome[]starter
+  404:
+    title: page not found
+  blank:
+    nav: blank
+    title: blank page
+    description: this is a blank page
+    just_blank_page_with_title: just blank page with title
+  configurator:
+    nav: CONFIGURATOR
+    title: post
+    description: this is a post page
+  test:
+    nav: test
+    title: testing
+    description: this is a test page
+    counter: counter
+    increment: increment
+    decrement: decrement
+    reset: reset
+    identity: identity
+    full_name: fullName
+  getting-started:
+    nav: getting started
+    title: getting started
+    description: this is a getting started page
+  setting:
+    nav: setting
+    title: setting
+    description: this is a setting page
+    sections:
+      validate_username:
+        title: validate github profile
+        description: type your github username and click the button to validate.
+        footer: Learn more about
+        footer_button: validate
+        footer_link: github users api
+      bot_id:
+        title: bot id
+        description: This is your bot ID.
+        footer: Used when interacting with the bot.
+      protection_spam:
+        title: spam protection
+        description: toggle enable to remove the red border
+        footer: if enable we will secure your comments from spam
+      advanced_enable_advanced:
+        title: enable advanced settings
+        description: you can enable advanced settings to change the settings
+      advanced_dir_listing:
+        title: directory listing
+        description: if no index file is present within a directory, the directory contents will be displayed.
+  dashboard:
+    nav: dashboard
+    title: dashboard
+    index:
+      nav: home
+      title: home
