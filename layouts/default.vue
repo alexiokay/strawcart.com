@@ -12,9 +12,7 @@ div(style="display: flex, flex-direction: column " class="flex flex-col justify-
             <slot />
             Footer(class="mt-12")
     
-<div class="square-wrapper">
-  <div class="square"></div>
-</div>
+
 
 
 </template>
@@ -31,7 +29,6 @@ const sendEmail = () => {
 };
 
 onMounted(() => {
-  const square = document.querySelector(".square") as HTMLElement;
   const advantages = document.querySelectorAll(
     ".advantage"
   ) as NodeListOf<HTMLElement>;
@@ -62,7 +59,7 @@ onMounted(() => {
   );
 
   // Tell the observer which elements to track
-  observer.observe(document.querySelector(".square-wrapper") as HTMLElement);
+
   advantages.forEach((advantage: HTMLElement) => {
     observer.observe(advantage);
   });
@@ -106,10 +103,6 @@ body
         align-self: center
         letter-spacing: 0.18em
 
-.square
-    width: 200px
-    height: 200px
-    background: orange
 
 .advantage
   opacity: 0
@@ -117,9 +110,6 @@ body
 .product
   opacity: 0
 
-@media (prefers-reduced-motion: no-preference)
-    .square-animation
-        animation: wipe-enter 1s 1
 
 
 @media (prefers-reduced-motion: no-preference)

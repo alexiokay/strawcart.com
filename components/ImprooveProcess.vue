@@ -30,7 +30,7 @@ div.improve-process-container(class=" flex bg-[#292929] items-start justify-cent
           h6(class="tracking-widest") Easly sell your goods with StrawStores anywhere you want.
 
       button(class="w-[25rem] float-right mr-12 lg:mr-28 -rotate-6 tracking-widest h-auto p-3 bg-[#CE3030] font-itim  text-white text-3xl font-semibold rounded-lg drop-shadow-[0.2rem_0.3rem_0.2rem_rgba(0,0,0,0.5)]") Tell me more about that!
-        img(src="images/strawberry.png" class="w-2/6 absolute top-[-50px] right-[-65px]")
+        img(src="/images/strawberry.png" class="w-2/6 absolute top-[-50px] right-[-65px]")
 div.improve-process-container(class="relative border-y-2 border-zinc-900  flex bg-[#292929] items-start justify-center h-[8rem] p-7 lg:p-12 xl:px-16 text-white")
     div.triangle-left(class="absolute bottom-[-9rem]  left-0  ")
     div.triangle-right(class="absolute bottom-[-9rem]  right-0  ")
