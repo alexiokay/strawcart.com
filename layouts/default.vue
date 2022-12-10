@@ -1,3 +1,4 @@
+script
 <template lang="pug">
 div(style="display: flex, flex-direction: column " class="flex flex-col justify-center items-center ")
     <Navbar/>
@@ -14,6 +15,8 @@ div(style="display: flex, flex-direction: column " class="flex flex-col justify-
 <div class="square-wrapper">
   <div class="square"></div>
 </div>
+
+
 </template>
 
 <script setup lang="ts">
@@ -28,22 +31,44 @@ const sendEmail = () => {
 };
 
 onMounted(() => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const square = entry.target.querySelector(".square") as HTMLElement;
+  const square = document.querySelector(".square") as HTMLElement;
+  const advantages = document.querySelectorAll(
+    ".advantage"
+  ) as NodeListOf<HTMLElement>;
+  const products = document.querySelectorAll(
+    ".product"
+  ) as NodeListOf<HTMLElement>;
 
-      if (entry.isIntersecting) {
-        square.classList.add("square-animation");
-        return; // if we added the class, exit the function
-      }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("advantage-animation");
+          if (entry.target.querySelector(".product .order-0"))
+            entry.target.classList.add("product-animation-left");
+          if (entry.target.querySelector(".product .order-1"))
+            entry.target.classList.add("product-animation-right");
+          return; // if we added the class, exit the function
+        } else {
+          return;
+        }
 
-      // We're not intersecting, so remove the class!
-      square.classList.remove("square-animation");
-    });
-  });
+        // We're not intersecting, so remove the class!
+      });
+    },
+    {
+      threshold: 1,
+    }
+  );
 
   // Tell the observer which elements to track
   observer.observe(document.querySelector(".square-wrapper") as HTMLElement);
+  advantages.forEach((advantage: HTMLElement) => {
+    observer.observe(advantage);
+  });
+  products.forEach((product: HTMLElement) => {
+    observer.observe(product);
+  });
 });
 </script>
 
@@ -86,11 +111,28 @@ body
     height: 200px
     background: orange
 
+.advantage
+  opacity: 0
 
+.product
+  opacity: 0
 
 @media (prefers-reduced-motion: no-preference)
     .square-animation
         animation: wipe-enter 1s 1
+
+
+@media (prefers-reduced-motion: no-preference)
+    .advantage-animation
+        animation: something-enter 1s 1 ease-in-out forwards
+
+@media (prefers-reduced-motion: no-preference)
+    .product-animation-left
+        animation: product-enter-left 1s 1 ease-in-out forwards
+
+@media (prefers-reduced-motion: no-preference)
+    .product-animation-right
+        animation: product-enter-right 1s 1 ease-in-out forwards
 
 @keyframes wipe-enter
     0%
@@ -98,4 +140,28 @@ body
 
     50%
         transform: scale(1, .025)
+
+@keyframes something-enter
+  0%
+    transform: translateY(200px)  scale(0.25),
+    opacity: 0.2
+  100%
+    transform: translateY(0px)   scale(1),
+    opacity: 1
+
+@keyframes product-enter-left
+  0%
+    transform: translateX(-300px)
+    opacity: 0.3
+  100%
+    transform: translateX(0px)
+    opacity: 1
+
+@keyframes product-enter-right
+  0%
+    transform: translateX(300px)
+    opacity: 0.3
+  100%
+    transform: translateX(0px)
+    opacity: 1
 </style>
