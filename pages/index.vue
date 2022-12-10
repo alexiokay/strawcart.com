@@ -19,9 +19,10 @@ div(class=" w-full h-full bg-transparent flex flex-col mt-[0.35rem] px-4 ")
   div.advantage-wrapper2
     Advantages(:item1="customization" :item2="support" :item3="sustainability")
 
+  hr(class=" w-full border-[0.8px] mt-16 mb-8 ")
   <!-- hr(class=" w-full border-[0.8px] mt-16 mb-16") -->
-  div(class="w-full flex tems-center justify-center mt-16 mb-16")
-   
+  div(class="w-full flex flex-col items-center justify-center space-y-10 mt-16 mb-16")
+      h4(class="mb-3 text-4xl") {{$t('components.video.title')}}
       VideoPlayer(class="w-full md:w-5/5 h-[40rem] rounded-xl overflow-hidden")
   <!-- VIDEO  -->
 
@@ -44,6 +45,10 @@ div(class=" w-full h-full bg-transparent flex flex-col mt-[0.35rem] px-4 ")
       button(class="w-[10rem] h-[4rem] font-itim text-3xl text-white rounded-xl bg-[#7957FF] drop-shadow-lg") Shop
 
     Social
+
+  Contact(class="mt-24")
+  FAQ2(class="mt-48")
+  
 </template>
 
 <script setup lang="ts">
@@ -126,6 +131,46 @@ const slides = ref([
       "https://defjam.pl/img/imagecache/1300x500_pictures_bbbbimage003.jpg",
   },
 ]);
+
+onMounted(() => {
+  const advantages = document.querySelectorAll(
+    ".advantage"
+  ) as NodeListOf<HTMLElement>;
+  const products = document.querySelectorAll(
+    ".product"
+  ) as NodeListOf<HTMLElement>;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("advantage-animation");
+          if (entry.target.querySelector(".product .order-0"))
+            entry.target.classList.add("product-animation-left");
+          if (entry.target.querySelector(".product .order-1"))
+            entry.target.classList.add("product-animation-right");
+          return; // if we added the class, exit the function
+        } else {
+          return;
+        }
+
+        // We're not intersecting, so remove the class!
+      });
+    },
+    {
+      threshold: 1,
+    }
+  );
+
+  // Tell the observer which elements to track
+
+  advantages.forEach((advantage: HTMLElement) => {
+    observer.observe(advantage);
+  });
+  products.forEach((product: HTMLElement) => {
+    observer.observe(product);
+  });
+});
 </script>
 
 <style lang="sass">

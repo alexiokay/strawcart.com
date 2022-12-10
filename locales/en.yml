@@ -1,4 +1,8 @@
 components:
+  video:
+    title: See how it works in real!
+  FAQ:
+    first: s
   navbar:
     contact: CONTACT
     login: LOGIN

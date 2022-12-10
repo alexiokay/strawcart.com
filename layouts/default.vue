@@ -27,46 +27,6 @@ const router = useRouter();
 const sendEmail = () => {
   document.location = "mailto:graphicdesigner@gmail.com";
 };
-
-onMounted(() => {
-  const advantages = document.querySelectorAll(
-    ".advantage"
-  ) as NodeListOf<HTMLElement>;
-  const products = document.querySelectorAll(
-    ".product"
-  ) as NodeListOf<HTMLElement>;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("advantage-animation");
-          if (entry.target.querySelector(".product .order-0"))
-            entry.target.classList.add("product-animation-left");
-          if (entry.target.querySelector(".product .order-1"))
-            entry.target.classList.add("product-animation-right");
-          return; // if we added the class, exit the function
-        } else {
-          return;
-        }
-
-        // We're not intersecting, so remove the class!
-      });
-    },
-    {
-      threshold: 1,
-    }
-  );
-
-  // Tell the observer which elements to track
-
-  advantages.forEach((advantage: HTMLElement) => {
-    observer.observe(advantage);
-  });
-  products.forEach((product: HTMLElement) => {
-    observer.observe(product);
-  });
-});
 </script>
 
 <style lang="sass">
