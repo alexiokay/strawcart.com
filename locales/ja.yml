@@ -1,4 +1,28 @@
 components:
+  navbar:
+    contact: コンタクト
+    login: ログインする
+    register: 登録
+    safe: クリップボード
+    cart: カート
+  footer:
+    information:
+      information: 情報
+      regulations: 規則
+      cookies: クッキーポリシー
+      return: 返品と苦情
+      delivery: 配送と支払い
+      privacy_policy: プライバシーポリシー
+    account:
+      your_account: 貴方のアカウント
+      login: ログイン
+      orders: ご注文
+      registration: 登録
+    newsletter:
+      button: サインアップ
+      placeholder: あなたのメール
+      description: ストアでの新製品やプロモーションに関する情報を受け取りたい場合は、電子メールを入力してください。私たちはあなたのデータを私たちに従って処理します
+      description2: プライバシーポリシー。
   language_switcher:
     change_language: 言語を変更
   theme_switcher:

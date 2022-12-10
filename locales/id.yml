@@ -1,4 +1,31 @@
 components:
+  navbar:
+    contact: kontak
+    login: gabung
+    register: daftar
+    safe: kliphoard
+    cart: keranjang
+  footer:
+    information:
+      information: informasi
+      regulations: peraturan
+      cookies: kebijakan cookie
+      return: kembali dan pengaduan
+      delivery: pengiriman dan pembayaran
+      privacy_policy: kebijakan pribadi
+    account:
+      your_account: akun anda
+      login: gabung
+      orders: pesanan anda
+      registration: registrasi
+    newsletter:
+      button: daftar
+      placeholder: email mu
+      description: >-
+        jika anda ingin menerima informasi tentang produk baru dan promosi di
+        toko - masukkan e-mail anda. data anda akan kami proses sesuai dengan
+        keterangan kami
+      description2: kebijakan pribadi.
   language_switcher:
     change_language: ganti bahasa
   theme_switcher:

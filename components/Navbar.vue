@@ -16,13 +16,13 @@ div#navbar-wrapper(class=" w-full text-gray-500 h-full flex flex-col items-cente
       div(class='flex space-x-1')
         EmailIcon(class="w-4 h-4")
         p.navbar-text(class="hover:cursor-pointer hover:text-gray-800")  biuro@strawcart.com 
-      p.navbar-text(class="hover:cursor-pointer hover:text-gray-800")  KONTAKT
+      p.navbar-text(class="hover:cursor-pointer hover:text-gray-800")  {{$t('components.navbar.contact').toUpperCase()}}
     div(class="flex justify-end w-1/2 mt-[0.4rem] space-x-3")
-      p.navbar-text(class="hover:cursor-pointer hover:text-gray-800") ZALOGUJ
+      p.navbar-text(class="hover:cursor-pointer hover:text-gray-800") {{$t('components.navbar.login').toUpperCase()}}
       p |
-      p.navbar-text(class="hover:cursor-pointer hover:text-gray-800")  ZAREJESTRUJ 
+      p.navbar-text(class="hover:cursor-pointer hover:text-gray-800") {{$t('components.navbar.register').toUpperCase()}}
       p |
-      p.navbar-text(class="hover:cursor-pointer hover:text-gray-800")  SCHOWEK (0)
+      p.navbar-text(class="hover:cursor-pointer hover:text-gray-800")  {{$t('components.navbar.safe').toUpperCase()}} (0)
       <LanguageSwitcher />
   hr(class="border-1 border-gray-100 w-full")
   div#navbar-content1(class="flex items-center justify-between w-full h-[4.9rem] text-xs px-3  xl:px-1 xl:w-[82rem] ")
@@ -35,7 +35,7 @@ div#navbar-wrapper(class=" w-full text-gray-500 h-full flex flex-col items-cente
         p(class="absolute top-[4rem]  text-white") 0
       p (0.00ZŁ)
       IconDown(class="text-gray-500 w-5 h-5")
-      button(class='h-full w-[8rem]  text-center bg-gray-500 text-white') DO KASY
+      button(class='h-full w-[8rem]  text-center bg-gray-500 text-white')  {{$t('components.navbar.cart').toUpperCase()}} 
     
   div#navbar-content2(class="  lg:w-[76%] w-[66%] h-full flex items-center justify-end md:justify-around mx-0 tracking-wider text-black font-brown  font-normal ")
     

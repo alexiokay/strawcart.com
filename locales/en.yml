@@ -1,4 +1,28 @@
 components:
+  navbar:
+    contact: CONTACT
+    login: LOGIN
+    register: REGISTER
+    safe: CLIPHOARD
+    cart: CART
+  footer:
+    information:
+      information: INFORMATION
+      regulations: Regulations
+      cookies: Cookies Policy
+      return: Return and Complaint
+      delivery: Delivery and payment
+      privacy_policy: Privacy Policy
+    account:
+      your_account: Your account
+      login: Login
+      orders: Your orders
+      registration: Registration
+    newsletter:
+      button: SIGN UP
+      placeholder: your email
+      description: IF YOU WANT TO RECEIVE INFORMATION ABOUT NEW PRODUCTS AND PROMOTIONS IN THE STORE - ENTER YOUR E-MAIL. WE WILL PROCESS YOUR DATA IN ACCORDANCE WITH OUR
+      description2: PRIVACY POLICY.
   language_switcher:
     change_language: change language
   theme_switcher:

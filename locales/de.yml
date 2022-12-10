@@ -1,4 +1,31 @@
 components:
+  navbar:
+    contact: kontakt
+    login: anmeldung
+    register: registrieren
+    safe: cliphoard
+    cart: wagen
+  footer:
+    information:
+      information: information
+      regulations: vorschriften
+      cookies: cookie-richtlinie
+      return: rücksendung und reklamation
+      delivery: lieferung und zahlung
+      privacy_policy: datenschutz-bestimmungen
+    account:
+      your_account: ihr konto
+      login: anmeldung
+      orders: deine bestellungen
+      registration: anmeldung
+    newsletter:
+      button: anmelden
+      placeholder: deine e-mail
+      description: >-
+        wenn sie informationen über neue produkte und aktionen im shop erhalten
+        möchten - geben sie ihre e-mail ein. wir verarbeiten ihre daten gemäss
+        unserer
+      description2: datenschutz-bestimmungen.
   language_switcher:
     change_language: sprache ändern
   theme_switcher:

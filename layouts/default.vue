@@ -107,6 +107,9 @@ body
 .advantage
   opacity: 0
 
+.advantage-visible
+  opacity: 1
+
 .product
   opacity: 0
 

@@ -1,4 +1,30 @@
 components:
+  navbar:
+    contact: kontakt
+    login: zaloguj sie
+    register: zarejestruj się
+    safe: schowek
+    cart: wózek
+  footer:
+    information:
+      information: informacja
+      regulations: przepisy prawne
+      cookies: polityka cookies
+      return: zwrot i reklamacja
+      delivery: dostawa i płatność
+      privacy_policy: polityka prywatności
+    account:
+      your_account: twoje konto
+      login: zaloguj sie
+      orders: twoje rozkazy
+      registration: rejestracja
+    newsletter:
+      button: zapisz się
+      placeholder: twój email
+      description: >-
+        jeśli chcesz otrzymać informacje o nowościach i promocjach w sklepie -
+        podaj swój adres e-mail. Będziemy przetwarzać twoje dane zgodnie z naszą
+      description2: polityką prywatności.
   language_switcher:
     change_language: zmień język
   theme_switcher:
@@ -64,7 +90,7 @@ components:
         transportu na wjazd do chłodni.
       p2: chroni truskawki przed silnym słońcem,
 pages:
-  '404':
+  "404":
     title: strona nie znaleziona
   shop:
     nav: sklep
