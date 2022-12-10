@@ -141,7 +141,7 @@ const slides = ref([
   right: 50%
   margin-left: -50vw
   margin-right: -50vw
-  background-image: url("~/images/shop-background.png")
+  background-image: url("/images/shop-background.png")
   background-size: contain
   background-repeat: repeat
 
