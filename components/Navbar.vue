@@ -50,7 +50,7 @@ div#navbar-wrapper(class=" w-full text-gray-500 h-full flex flex-col items-cente
     NuxtLink(class="navbar-text  hidden md:block  hover:text-gray-400  " to="/shop") {{$t('pages.shop.nav').toUpperCase()}}
     NuxtLink(@click="openDropdown()" class="navbar-text  hidden md:block  hover:text-gray-400  " to="/") SERVICES
       
-    NuxtLink(class="navbar-text  hidden md:block hover:text-gray-400  " to="/") CONTACT
+    NuxtLink(@click="toContact" class="navbar-text  hidden md:block hover:text-gray-400  " to="/") CONTACT
 
     
   hr(class="border-[0.1px] border-gray-200 w-full")
@@ -82,7 +82,7 @@ const scrollToAbout = () => {
 
 const scrollToContact = () => {
   const contact = document?.getElementById("contact");
-  contact?.scrollIntoView({ behavior: "smooth" });
+  contact?.scrollIntoView({ behavior: "auto" });
   contact?.classList.add("shake");
 };
 
@@ -94,7 +94,7 @@ const toContact = () => {
   router.push({ name: "index" });
   setTimeout(() => {
     scrollToContact();
-  }, 200);
+  }, 100);
 };
 </script>
 

@@ -1,4 +1,53 @@
 components:
+  video:
+    title: zobacz, jak to działa w rzeczywistości!
+  FAQ:
+    title: często zadawane pytania
+    subtitle: mam pytanie? jesteśmy tutaj, aby pomóc.
+    free_trial:
+      question: czy dostępna jest bezpłatna wersja próbna?
+      answer: >-
+        tak, dołącz do listy oczekujących i wypróbuj strawcat przez tydzień,
+        kiedy będzie dostępny, bez żadnych kosztów
+    broken:
+      question: a co jeśli coś mi się zepsuło?
+      answer: >-
+        nie martw się, stworzyliśmy mini sklep, w którym możesz kupić wszelkie
+        dodatkowe części, takie jak... narzędzia, koła, dach, śruby itp.
+    what_inside:
+      question: co znajduje się w zamówieniu?
+      answer: pusty
+    delivery:
+      question: jak to jest dostarczane?
+      answer: możesz wybrać między dhl
+    why:
+      question: dlaczego w ogóle powinienem spróbować?
+      answer: >-
+        strawcart w połączeniu z naszym strawframework może sprawić, że twoja
+        firma będzie o około 170% bardziej wydajna niż konkurencja.
+  contact:
+    title: skontaktuj się z nami
+    subtitle: nasz przyjazny zespół chętnie się z tobą skontaktuje!
+    name: imię
+    surname: nazwisko
+    email:
+      text: e-mail
+      error: niepoprawny email
+      succeed: poprawny e-mail
+    telephone:
+      text: numer telefonu
+      error: nieprawidłowy numer telefonu
+      succeed: poprawny numer
+    message:
+      text: wiadomość
+      error: pusta wiadomość
+      succeed: prawidłowy
+    privacy_policy:
+      title: polityka prywatności
+      subtitle: zaznaczając akceptujesz warunki polityki prywatności.
+      error: zaakceptuj politykę prywatności
+      succeed: przyjęty
+    button: wyślij wiadomość
   navbar:
     contact: kontakt
     login: zaloguj sie
@@ -23,8 +72,8 @@ components:
       placeholder: twój email
       description: >-
         jeśli chcesz otrzymać informacje o nowościach i promocjach w sklepie -
-        podaj swój adres e-mail. Będziemy przetwarzać twoje dane zgodnie z naszą
-      description2: polityką prywatności.
+        wpisz swój e-mail. będziemy przetwarzać twoje dane zgodnie z naszymi
+      description2: polityka prywatności.
   language_switcher:
     change_language: zmień język
   theme_switcher:
@@ -90,7 +139,7 @@ components:
         transportu na wjazd do chłodni.
       p2: chroni truskawki przed silnym słońcem,
 pages:
-  "404":
+  '404':
     title: strona nie znaleziona
   shop:
     nav: sklep

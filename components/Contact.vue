@@ -1,8 +1,8 @@
 <template lang="pug">
-div(class="flex flex-row w-full h-auto")
+div#contact(class="flex flex-row w-full h-auto")
     div(class="flex flex-col w-1/2 mt-24 mb-24") 
-        h5(class="text-6xl mb-4") Contact Us
-        p Our friendly team would love to hear from you!
+        h5(class="text-6xl mb-4") {{$t('components.contact.title')}} 
+        p {{$t('components.contact.subtitle')}}  
         MakeOrder(class="mt-12")
     div(class="w-1/2 bg-[#ff8e8e]")
         <div class="map  w-full h-full" id="map" ></div>
@@ -10,7 +10,7 @@ div(class="flex flex-row w-full h-auto")
 
 <script setup lang="ts">
 import { Loader } from "@googlemaps/js-api-loader";
-
+const { t } = useLang();
 const config = useRuntimeConfig();
 const loader = new Loader({
   apiKey: config.GOOGLE_MAPS_API_KEY,

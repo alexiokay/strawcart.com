@@ -1,4 +1,47 @@
 components:
+  video:
+    title: 看看它是如何实际工作的！
+  FAQ:
+    title: 经常问的问题
+    subtitle: 有一个问题？我们随时为您提供帮助。
+    free_trial:
+      question: 有免费试用吗？
+      answer: 是的，加入等候名单并试用 strawcart 一周，当它可用时，无需任何费用
+    broken:
+      question: 如果我的东西坏了怎么办？
+      answer: 别担心，我们创建了迷你商店，您可以在其中购买任何其他零件，例如工具、轮子、车顶、螺丝等。
+    what_inside:
+      question: 订单里面有什么？
+      answer: 空的
+    delivery:
+      question: 它是如何交付的？
+      answer: 您可以选择 dhl
+    why:
+      question: 我为什么要尝试？
+      answer: strawcart 如果与我们的 strawframework 连接，可以使您的业务效率比竞争对手高 170% 左右。
+  contact:
+    title: 联系我们
+    subtitle: 我们友好的团队很乐意收到您的来信！
+    name: 名字
+    surname: 姓
+    email:
+      text: 电子邮件
+      error: 不合规电邮
+      succeed: 正确的电子邮件
+    telephone:
+      text: 电话号码
+      error: 无效的电话号码
+      succeed: 正确的号码
+    message:
+      text: 信息
+      error: 空消息
+      succeed: 正确的
+    privacy_policy:
+      title: 隐私政策
+      subtitle: 勾选即表示您接受隐私政策的条款。
+      error: 接受隐私政策
+      succeed: 公认
+    button: 发信息
   navbar:
     contact: 接触
     login: 登录
@@ -49,7 +92,7 @@ components:
       description: 自定义高度，搁板
   strawcart_showcase:
     title: 使用 strawcart 改善您的草莓农场
-    description: 这个想法来自瑞士，并将经过检查的系统带到您的种植园。旨在最大限度地提高收入、重命名和员工士气 :) 将您的企业转变为当地的霸主。
+    description: 这个想法来自瑞士，并将经过检查的系统带到您的种植园。旨在最大限度地提高收入、重整和员工士气 :) 将您的企业转变为当地的霸主。
     pricing: 购买 770 美元/租用 60 美元
     button: 立即获取
   product_overwiew:

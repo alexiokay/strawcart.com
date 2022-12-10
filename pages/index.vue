@@ -1,23 +1,22 @@
 <template lang="pug">
 div(class=" w-full h-full bg-transparent flex flex-col mt-[0.35rem] px-4 ")
   <!-- HEADER -->
-  div(class="flex w-full justify-around items-center h-[28rem] mt-16")
-    div(class="flex w-2/5 flex-col")
+  div(class="flex flex-col md:flex-row  w-full justify-around items-center h-auto mt-16")
+    div(class="flex w-full  md:w-2/5 flex-col order-1 md:order-0")
       h1(class="text-[40px] leading-[138%] font-itim font-inter") {{$t('components.strawcart_showcase.title')}}
       h2(class="leading-[173%] tracking-[2%] text-[20px] mt-8") {{$t('components.strawcart_showcase.description')}}
       div(class="flex w-full justify-end space-x-12  items-center mt-12")
         p {{$t('components.strawcart_showcase.pricing')}}
         button(class="bg-[#CE3030] tracking-[12%] text-2xl drop-shadow-[0.2rem_0.3rem_0.2rem_rgba(0,0,0,0.5)] text-white rounded-lg w-32 font-itim min-h-[3rem]" ) {{$t('components.strawcart_showcase.button')}}
-    div(class="block relative h-full w-max rounded-xl ")
+    div(class="block relative h-[28rem] w-max rounded-xl hover:scale-125 order-0 md:order-1")
       img(class=" w-max object-contain drop-shadow-xl rounded-xl border-2   border-[#DADADA]  h-full" src="/images/strawcart-model.jpg")
       img(class="absolute top-0 right-[-65px] w-[10rem] h-[8rem]" src="/images/1-year-warranty.png")
   <!-- ADVANTAGES -->
  
 
-  div.advantage-wrapper1
-    Advantages(:item1="income_producitivity" :item2="peak_experience" :item3="framework")
+
   div.advantage-wrapper2
-    Advantages(:item1="customization" :item2="support" :item3="sustainability")
+    Advantages(:item1="customization" :item2="support" :item3="sustainability" :item4="income_producitivity" :item5="peak_experience" :item6="framework")
 
   hr(class=" w-full border-[0.8px] mt-16 mb-8 ")
   <!-- hr(class=" w-full border-[0.8px] mt-16 mb-16") -->
@@ -37,16 +36,10 @@ div(class=" w-full h-full bg-transparent flex flex-col mt-[0.35rem] px-4 ")
   ProductOverwiew(:h1="$t('components.product_overwiew.straw_warehouse.h1')" :h2="$t('components.product_overwiew.straw_warehouse.h2')" :p1="$t('components.product_overwiew.straw_warehouse.p1')" :p2="$t('components.product_overwiew.straw_warehouse.p2')" :p3="$t('components.product_overwiew.straw_warehouse.p3')" img="/images/products/strawWarehouse.png" )
   ProductOverwiew(:h1="$t('components.product_overwiew.straw_shop.h1')" :h2="$t('components.product_overwiew.straw_shop.h2')" :p1="$t('components.product_overwiew.straw_shop.p1')" img="/images/products/strawShop.png" :reversed="true" )
 
-  div.cooming-soon(class="relative flex flex-col mt-16 ")
-    div(class=" h-[8rem] md:h-[12rem] z-20 flex font-itim flex-col items-center justify-center space-y-4  bg-[#292929] -rotate-6 text-white")
-      p(class="text-3xl md:text-5xl") Cooming Soon
-      p(class=" text-2xl md:text-4xl") Or choose -> Vertical Hydroponics Farm
-    div.shop-container(class="h-[20rem] md:h-[30rem] w-[20rem] absolute top-[-2rem]  flex items-center justify-center z-10 mb-16")
-      button(class="w-[10rem] h-[4rem] font-itim text-3xl text-white rounded-xl bg-[#7957FF] drop-shadow-lg") Shop
-
+  CoomingSoon
     Social
 
-  Contact(class="mt-24")
+  Contact(class="mt-12")
   FAQ2(class="mt-48")
   
 </template>
@@ -176,13 +169,6 @@ onMounted(() => {
 <style lang="sass">
 
 
-.cooming-soon
-  width: 110vw
-  position: relative
-  left: 45%
-  right: 50%
-  margin-left: -50vw
-  margin-right: -50vw
 
 .full-width
   width: 100vw
@@ -192,16 +178,6 @@ onMounted(() => {
   margin-left: -50vw
   margin-right: -50vw
 
-.shop-container
-  width: 100vw
-  position: relative
-  left: 50%
-  right: 50%
-  margin-left: -50vw
-  margin-right: -50vw
-  background-image: url("/images/shop-background.png")
-  background-size: contain
-  background-repeat: repeat
 
 .carousel__prev
     box-sizing: content-box

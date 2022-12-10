@@ -1,6 +1,6 @@
 <template lang="pug">
 video-player(src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-    poster="https://www.agqlabs.us.com/wp-content/uploads/Albinism-in-strawberries.jpeg.webp"
+    poster="/images/video-placeholder.jpg"
     controls
     :loop="true"
     :volume="0.6"

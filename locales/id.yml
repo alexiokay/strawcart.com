@@ -1,4 +1,53 @@
 components:
+  video:
+    title: lihat cara kerjanya secara nyata!
+  FAQ:
+    title: pertanyaan yang sering diajukan
+    subtitle: ada pertanyaan? kami siap membantu.
+    free_trial:
+      question: apakah ada uji coba gratis yang tersedia?
+      answer: >-
+        ya, bergabunglah dengan daftar tunggu dan coba strawcart selama
+        seminggu, jika tersedia, tanpa biaya apa pun
+    broken:
+      question: bagaimana jika barang saya rusak?
+      answer: >-
+        jangan khawatir, kami membuat toko mini tempat anda bisa mendapatkan
+        suku cadang tambahan seperti .. perkakas, roda, atap, sekrup, dll.
+    what_inside:
+      question: apa yang ada di dalam pesanan?
+      answer: kosong
+    delivery:
+      question: bagaimana pengirimannya?
+      answer: anda dapat memilih antara dhl
+    why:
+      question: mengapa saya harus mencoba?
+      answer: >-
+        strawcart jika dihubungkan dengan strawframework kami dapat membuat
+        bisnis anda sekitar 170% lebih efisien dibandingkan pesaing anda.
+  contact:
+    title: hubungi kami
+    subtitle: tim kami yang ramah akan senang mendengar dari anda!
+    name: nama kecil
+    surname: nama keluarga
+    email:
+      text: surel
+      error: email tidak valid
+      succeed: email yang benar
+    telephone:
+      text: nomor telepon
+      error: nomor telepon tidak valid
+      succeed: nomor yang benar
+    message:
+      text: pesan
+      error: pesan kosong
+      succeed: benar
+    privacy_policy:
+      title: kebijakan pribadi
+      subtitle: dengan mencentang anda menerima persyaratan kebijakan privasi.
+      error: terima kebijakan privasi
+      succeed: diterima
+    button: mengirim pesan
   navbar:
     contact: kontak
     login: gabung

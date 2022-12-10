@@ -1,4 +1,47 @@
 components:
+  video:
+    title: 実際に動く様子をご覧ください！
+  FAQ:
+    title: よくある質問
+    subtitle: 質問があります？私たちは助けるためにここにいます。
+    free_trial:
+      question: 無料トライアルはありますか?
+      answer: はい、ウェイティング リストに参加して、strawcart が利用可能になったら 1 週間無料でお試しください
+    broken:
+      question: 私の何かが壊れた場合はどうなりますか？
+      answer: 工具、車輪、屋根、ネジなどの追加部品を入手できるミニショップを作成しましたのでご安心ください。
+    what_inside:
+      question: 注文内容は？
+      answer: 空の
+    delivery:
+      question: 配送方法は？
+      answer: dhlからお選びいただけます
+    why:
+      question: なぜ私も試してみるべきですか？
+      answer: strawcart を strawframework と接続すると、ビジネスを競合他社よりも約 170% 効率化できます。
+  contact:
+    title: お問い合わせ
+    subtitle: 私たちのフレンドリーなチームは、あなたからのご連絡をお待ちしております!
+    name: 名字
+    surname: 姓
+    email:
+      text: eメール
+      error: 無効な電子メール
+      succeed: 正しいメール
+    telephone:
+      text: 電話番号
+      error: 無効な電話番号
+      succeed: 正しい番号
+    message:
+      text: メッセージ
+      error: 空のメッセージ
+      succeed: 正しい
+    privacy_policy:
+      title: プライバシーポリシー
+      subtitle: チェックを入れると、プライバシー ポリシーの条項に同意したことになります。
+      error: プライバシー ポリシーに同意する
+      succeed: 承認済み
+    button: メッセージを送る
   navbar:
     contact: コンタクト
     login: ログインする

@@ -1,4 +1,56 @@
 components:
+  video:
+    title: sehen sie, wie es in wirklichkeit funktioniert!
+  FAQ:
+    title: häufig gestellte fragen
+    subtitle: eine frage haben? wir sind hier um zu helfen.
+    free_trial:
+      question: gibt es eine kostenlose testversion?
+      answer: >-
+        ja, treten sie der warteliste bei und testen sie strawcart eine woche
+        lang kostenlos, wenn es verfügbar ist
+    broken:
+      question: was ist, wenn mir etwas kaputt gegangen ist?
+      answer: >-
+        keine sorge, wir haben einen mini-shop eingerichtet, in dem sie
+        zusätzliche teile wie werkzeuge, räder, dach, schrauben usw. erhalten
+        können.
+    what_inside:
+      question: was ist in der bestellung?
+      answer: leer
+    delivery:
+      question: wie wird geliefert?
+      answer: sie können zwischen dhl wählen
+    why:
+      question: warum sollte ich es überhaupt versuchen?
+      answer: >-
+        strawcart, wenn es mit unserem strawframework verbunden ist, kann ihr
+        unternehmen um 170 % effizienter machen als ihre mitbewerber.
+  contact:
+    title: kontaktiere uns
+    subtitle: unser freundliches team freut sich, von ihnen zu hören!
+    name: vorname
+    surname: familien-oder nachname
+    email:
+      text: email
+      error: ungültige e-mail
+      succeed: richtige e-mail
+    telephone:
+      text: telefonnummer
+      error: ungültige telefonnummer
+      succeed: richtige nummer
+    message:
+      text: nachricht
+      error: leere nachricht
+      succeed: richtig
+    privacy_policy:
+      title: datenschutz-bestimmungen
+      subtitle: >-
+        durch ankreuzen akzeptieren sie die bedingungen der
+        datenschutzerklärung.
+      error: akzeptieren sie die datenschutzerklärung
+      succeed: akzeptiert
+    button: nachricht senden
   navbar:
     contact: kontakt
     login: anmeldung
