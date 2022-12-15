@@ -1,6 +1,9 @@
 components:
   video:
     title: 看看它是如何实际工作的！
+  cooming_soon:
+    title: 马上就来！
+    subtitle: 或选择 -> 垂直水培农场
   FAQ:
     title: 经常问的问题
     subtitle: 有一个问题？我们随时为您提供帮助。
@@ -92,7 +95,7 @@ components:
       description: 自定义高度，搁板
   strawcart_showcase:
     title: 使用 strawcart 改善您的草莓农场
-    description: 这个想法来自瑞士，并将经过检查的系统带到您的种植园。旨在最大限度地提高收入、重整和员工士气 :) 将您的企业转变为当地的霸主。
+    description: 这个想法来自瑞士，并将经过检查的系统带到您的种植园。旨在最大限度地提高收入、重命名和员工士气 :) 将您的企业转变为当地的霸主。
     pricing: 购买 770 美元/租用 60 美元
     button: 立即获取
   product_overwiew:
@@ -161,7 +164,7 @@ pages:
         description: 这是您的机器人 id。
         footer: 与机器人交互时使用。
       protection_spam:
-        title: 垃圾邮件保护
+        title: 垃圾邮件防护
         description: 切换启用以删除红色边框
         footer: 如果启用，我们将保护您的评论免受垃圾邮件
       advanced_enable_advanced:

@@ -1,6 +1,9 @@
 components:
   video:
     title: zobacz, jak to działa w rzeczywistości!
+  cooming_soon:
+    title: wkrótce!
+    subtitle: lub wybierz -> pionowa farma hydroponiczna
   FAQ:
     title: często zadawane pytania
     subtitle: mam pytanie? jesteśmy tutaj, aby pomóc.

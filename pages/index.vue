@@ -24,7 +24,7 @@ div(class=" w-full h-full bg-transparent flex flex-col mt-[0.35rem] px-4 ")
   <!-- hr(class=" w-full border-[0.8px] mt-16 mb-16") -->
   div(class="w-full flex flex-col items-center justify-center space-y-10 mt-16 mb-16")
       h4(class="mb-3 text-4xl") {{$t('components.video.title')}}
-      VideoPlayer(class="w-full md:w-5/5 h-[40rem] rounded-xl overflow-hidden")
+      VideoPlayer(class="w-full md:w-5/5  h-[20rem] md:h-[40rem] rounded-xl overflow-hidden")
   <!-- VIDEO  -->
 
  
@@ -34,7 +34,7 @@ div(class=" w-full h-full bg-transparent flex flex-col mt-[0.35rem] px-4 ")
 
   ProductOverwiew(:h1="$t('components.product_overwiew.straw_box.h1')" :h2="$t('components.product_overwiew.straw_box.h2')" :p1="$t('components.product_overwiew.straw_box.p1')" :p2="$t('components.product_overwiew.straw_box.p2')" img="/images/products/strawbox.png" :reversed="false" )
 
-  ProductOverwiew(:h1="$t('components.product_overwiew.straw_tote.h1')" :h2="$t('components.product_overwiew.straw_box.h2')" :p1="$t('components.product_overwiew.straw_tote.p1')" :p2="$t('components.product_overwiew.straw_tote.p2')" img="/images/products/strawtote2.png" :reversed="true" )
+  ProductOverwiew(:h1="$t('components.product_overwiew.straw_tote.h1')" :h2="$t('components.product_overwiew..straw_tote.h2')" :p1="$t('components.product_overwiew.straw_tote.p1')" :p2="$t('components.product_overwiew.straw_tote.p2')" img="/images/products/strawtote2.png" :reversed="true" )
   ProductOverwiew(:h1="$t('components.product_overwiew.straw_warehouse.h1')" :h2="$t('components.product_overwiew.straw_warehouse.h2')" :p1="$t('components.product_overwiew.straw_warehouse.p1')" :p2="$t('components.product_overwiew.straw_warehouse.p2')" :p3="$t('components.product_overwiew.straw_warehouse.p3')" img="/images/products/strawWarehouse.png" )
   ProductOverwiew(:h1="$t('components.product_overwiew.straw_shop.h1')" :h2="$t('components.product_overwiew.straw_shop.h2')" :p1="$t('components.product_overwiew.straw_shop.p1')" img="/images/products/strawShop.png" :reversed="true" )
 

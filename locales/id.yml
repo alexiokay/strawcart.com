@@ -1,6 +1,9 @@
 components:
   video:
     title: lihat cara kerjanya secara nyata!
+  cooming_soon:
+    title: segera!
+    subtitle: atau pilih -> pertanian hidroponik vertikal
   FAQ:
     title: pertanyaan yang sering diajukan
     subtitle: ada pertanyaan? kami siap membantu.

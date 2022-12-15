@@ -1,6 +1,9 @@
 components:
   video:
     title: sehen sie, wie es in wirklichkeit funktioniert!
+  cooming_soon:
+    title: demnächst!
+    subtitle: oder wählen sie -> vertical hydroponics farm
   FAQ:
     title: häufig gestellte fragen
     subtitle: eine frage haben? wir sind hier um zu helfen.
@@ -190,7 +193,7 @@ pages:
         footer: wird bei der interaktion mit dem bot verwendet.
       protection_spam:
         title: spamschutz
-        description: toggle enable, um den roten rahmen zu entfernen
+        description: toggle enable, um den roten rand zu entfernen
         footer: >-
           wenn sie diese option aktivieren, schützen wir ihre kommentare vor
           spam

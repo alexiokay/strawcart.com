@@ -1,12 +1,15 @@
 components:
   video:
     title: 実際に動く様子をご覧ください！
+  cooming_soon:
+    title: 近日公開！
+    subtitle: または選択 -> 垂直水耕栽培農場
   FAQ:
     title: よくある質問
     subtitle: 質問があります？私たちは助けるためにここにいます。
     free_trial:
       question: 無料トライアルはありますか?
-      answer: はい、ウェイティング リストに参加して、strawcart が利用可能になったら 1 週間無料でお試しください
+      answer: はい、ウェイティング リストに参加して、strawcart を 1 週間無料でお試しください。
     broken:
       question: 私の何かが壊れた場合はどうなりますか？
       answer: 工具、車輪、屋根、ネジなどの追加部品を入手できるミニショップを作成しましたのでご安心ください。
@@ -86,7 +89,7 @@ components:
       description: 24 時間以内にサポート チームからサポートを受ける
     sustainability:
       title: 持続可能性
-      description: strawcart proでもソーラーパネルで充電するので電気代は気にしなくていい
+      description: strawcart proでもソーラーパネルで充電するので電気の心配はいりません
     customization:
       title: カスタマイズ
       description: 高さ、棚板をカスタマイズ
@@ -154,7 +157,7 @@ pages:
     sections:
       validate_username:
         title: github プロファイルを検証する
-        description: github ユーザー名を入力し、ボタンをクリックして検証します。
+        description: github のユーザー名を入力し、ボタンをクリックして検証します。
         footer: 詳しくはこちら
         footer_button: 検証
         footer_link: github ユーザー api

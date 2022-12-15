@@ -1,6 +1,9 @@
 components:
   video:
     title: 실제로 어떻게 작동하는지 확인하십시오!
+  cooming_soon:
+    title: 곧 출시됩니다!
+    subtitle: 또는 선택 -> 수직 수경 재배 농장
   FAQ:
     title: 자주 묻는 질문
     subtitle: 질문이있다? 저희가 도와드리겠습니다.
@@ -61,7 +64,7 @@ components:
     account:
       your_account: 귀하의 계정
       login: 로그인
-      orders: 주문
+      orders: 당신의 주문
       registration: 등록
     newsletter:
       button: 가입하기
@@ -88,7 +91,7 @@ components:
       description: 24시간 내에 지원팀의 도움을 받으세요.
     sustainability:
       title: 지속 가능성
-      description: strawcart pro도 태양열 패널로 충전되므로 전기 걱정할 필요가 없습니다.
+      description: 스트로카트 프로도 태양광 패널로 충전이 되기 때문에 전기 걱정은 하지 않아도 됩니다.
     customization:
       title: 커스터마이징
       description: 높이, 선반 사용자 정의
