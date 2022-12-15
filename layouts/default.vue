@@ -11,10 +11,8 @@ div(style="display: flex, flex-direction: column " class="flex flex-col justify-
         div(class="flex flex-col justify-between items-center w-full h-full  px-3  xl:px-5 xl:w-[84.6rem] ")
             <slot />
             Footer(class="mt-12")
-    
-
-
-
+div(class="cursor cursor--small")
+canvas(class="cursor cursor--canvas" resize)
 </template>
 
 <script setup lang="ts">
@@ -27,6 +25,8 @@ const router = useRouter();
 const sendEmail = () => {
   document.location = "mailto:graphicdesigner@gmail.com";
 };
+
+onMounted(() => {});
 </script>
 
 <style lang="sass">
@@ -44,7 +44,6 @@ body
     display: flex
     flex-direction: column
     justify-content: center
-
 
 
 
@@ -117,4 +116,26 @@ body
   100%
     transform: translateX(0px)
     opacity: 1
+
+
+
+.cursor
+  position: fixed
+  left: 0
+  top: 0
+  pointer-events: none
+
+.cursor--small
+  width: 5px
+  height: 5px
+  left: -2.5px
+  top: -2.5px
+  border-radius: 50%
+  z-index: 11000
+  background: var(--color-text)
+
+.cursor--canvas
+  width: 100vw
+  height: 100vh
+  z-index: 12000
 </style>

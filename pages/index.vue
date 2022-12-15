@@ -1,16 +1,18 @@
 <template lang="pug">
 div(class=" w-full h-full bg-transparent flex flex-col mt-[0.35rem] px-4 ")
   <!-- HEADER -->
-  div(class="flex flex-col md:flex-row  w-full justify-around items-center h-auto mt-16")
-    div(class="flex w-full  md:w-2/5 flex-col order-1 md:order-0")
-      h1(class="text-[40px] leading-[138%] font-itim font-inter") {{$t('components.strawcart_showcase.title')}}
-      h2(class="leading-[173%] tracking-[2%] text-[20px] mt-8") {{$t('components.strawcart_showcase.description')}}
-      div(class="flex w-full justify-end space-x-12  items-center mt-12")
-        p {{$t('components.strawcart_showcase.pricing')}}
-        button(class="bg-[#CE3030] tracking-[12%] text-2xl drop-shadow-[0.2rem_0.3rem_0.2rem_rgba(0,0,0,0.5)] text-white rounded-lg w-32 font-itim min-h-[3rem]" ) {{$t('components.strawcart_showcase.button')}}
-    div(class="block relative h-[28rem] w-max rounded-xl hover:scale-125 order-0 md:order-1")
+  div(class="flex flex-col md:flex-row text-center md:text-start w-full justify-around items-center h-auto mt-16")
+    div(class="block relative h-[24rem] md:h-[28rem] w-max rounded-xl md:hover:scale-125 order-0 md:order-1")
       img(class=" w-max object-contain drop-shadow-xl rounded-xl border-2   border-[#DADADA]  h-full" src="/images/strawcart-model.jpg")
-      img(class="absolute top-0 right-[-65px] w-[10rem] h-[8rem]" src="/images/1-year-warranty.png")
+      img(class="absolute top-0 right-[-65px] w-[8rem] md:w-[10rem] h-[6rem] md:h-[8rem]" src="/images/1-year-warranty.png")
+    div(class="flex w-full  md:w-2/5 flex-col  order-1 md:order-0")
+      h1(class=" text-3xl mt-10 md:mt-0 md:text-[40px] leading-[138%] font-itim font-inter") {{$t('components.strawcart_showcase.title')}}
+      h2(class="leading-[173%] tracking-[2%]  text-lg  md:text-[20px] mt-8") {{$t('components.strawcart_showcase.description')}}
+      div(class="flex w-full justify-start space-x-12 text-lg  items-center mt-12")
+      
+        button(class="bg-[#CE3030] tracking-[12%] text-2xl drop-shadow-[0.2rem_0.3rem_0.2rem_rgba(0,0,0,0.5)] text-white rounded-lg w-32 font-itim min-h-[3rem]" ) {{$t('components.strawcart_showcase.button')}}
+        p(class="underline") {{$t('components.strawcart_showcase.pricing')}}
+   
   <!-- ADVANTAGES -->
  
 

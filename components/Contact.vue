@@ -1,10 +1,10 @@
 <template lang="pug">
-div#contact(class="flex flex-row w-full h-auto")
-    div(class="flex flex-col w-1/2 mt-24 mb-24") 
+div#contact(class="flex flex-col md:flex-row w-full h-auto")
+    div(class="flex flex-col w-full items-center justify-center md:w-1/2 mt-24 mb-24") 
         h5(class="text-6xl mb-4") {{$t('components.contact.title')}} 
         p {{$t('components.contact.subtitle')}}  
         MakeOrder(class="mt-12")
-    div(class="w-1/2 bg-[#ff8e8e]")
+    div(class="w-full md:w-1/2 h-96 md:h-auto bg-[#ff8e8e]")
         <div class="map  w-full h-full" id="map" ></div>
 </template>
 
