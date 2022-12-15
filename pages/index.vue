@@ -139,11 +139,16 @@ onMounted(() => {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("advantage-animation");
-          if (entry.target.querySelector(".product .order-0"))
+          entry.target.classList.add("advantage-visible");
+          if (entry.target.classList.contains("advantage")) {
+            entry.target.classList.add("advantage-animation");
+          }
+          if (entry.target.querySelector(".product .order1")) {
             entry.target.classList.add("product-animation-left");
-          if (entry.target.querySelector(".product .order-1"))
+          }
+          if (entry.target.querySelector(".product .order2")) {
             entry.target.classList.add("product-animation-right");
+          }
           return; // if we added the class, exit the function
         } else {
           return;

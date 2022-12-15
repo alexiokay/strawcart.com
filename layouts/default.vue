@@ -95,7 +95,7 @@ body
 
 @keyframes something-enter
   0%
-    transform: translateY(200px)  scale(0.25),
+    transform: translateY(-100px)  scale(0.55),
     opacity: 0.2
   100%
     transform: translateY(0px)   scale(1),
