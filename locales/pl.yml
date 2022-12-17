@@ -3,7 +3,7 @@ components:
     title: zobacz, jak to działa w rzeczywistości!
   cooming_soon:
     title: wkrótce!
-    subtitle: lub wybierz -> pionowa farma hydroponiczna
+    subtitle: pionowa farma hydroponiczna
   FAQ:
     title: często zadawane pytania
     subtitle: mam pytanie? jesteśmy tutaj, aby pomóc.
@@ -15,8 +15,8 @@ components:
     broken:
       question: a co jeśli coś mi się zepsuło?
       answer: >-
-        nie martw się, stworzyliśmy mini sklep, w którym możesz kupić wszelkie
-        dodatkowe części, takie jak... narzędzia, koła, dach, śruby itp.
+        nie martw się, stworzyliśmy mini sklep, w którym możesz dostać wszelkie
+        dodatkowe części, takie jak.. narzędzia, koła, dach, śruby itp.
     what_inside:
       question: co znajduje się w zamówieniu?
       answer: pusty
@@ -201,8 +201,8 @@ pages:
           jeśli w katalogu nie ma pliku indeksu, zostanie wyświetlona zawartość
           katalogu.
   dashboard:
-    nav: panel
-    title: panel
+    nav: deska rozdzielcza
+    title: deska rozdzielcza
     index:
       nav: dom
       title: dom

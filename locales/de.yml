@@ -3,7 +3,7 @@ components:
     title: sehen sie, wie es in wirklichkeit funktioniert!
   cooming_soon:
     title: demnächst!
-    subtitle: oder wählen sie -> vertical hydroponics farm
+    subtitle: vertikale hydroponik-farm
   FAQ:
     title: häufig gestellte fragen
     subtitle: eine frage haben? wir sind hier um zu helfen.
@@ -41,7 +41,7 @@ components:
     telephone:
       text: telefonnummer
       error: ungültige telefonnummer
-      succeed: richtige nummer
+      succeed: korrekte nummer
     message:
       text: nachricht
       error: leere nachricht
@@ -74,7 +74,7 @@ components:
       orders: deine bestellungen
       registration: anmeldung
     newsletter:
-      button: anmelden
+      button: anmeldung
       placeholder: deine e-mail
       description: >-
         wenn sie informationen über neue produkte und aktionen im shop erhalten
@@ -148,7 +148,7 @@ pages:
   '404':
     title: seite nicht gefunden
   shop:
-    nav: geschäft
+    nav: einkaufen
   index:
     title: nuxt 3[]super[]starter
   blank:
@@ -164,7 +164,7 @@ pages:
     nav: prüfung
     title: testen
     description: dies ist eine testseite
-    counter: zähler
+    counter: schalter
     increment: zuwachs
     decrement: dekrementieren
     reset: zurücksetzen
@@ -208,8 +208,8 @@ pages:
           wenn in einem verzeichnis keine indexdatei vorhanden ist, wird der
           inhalt des verzeichnisses angezeigt.
   dashboard:
-    nav: armaturenbrett
-    title: armaturenbrett
+    nav: instrumententafel
+    title: instrumententafel
     index:
-      nav: heimat
-      title: heimat
+      nav: zuhause
+      title: zuhause

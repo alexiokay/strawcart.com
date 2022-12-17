@@ -3,10 +3,10 @@ components:
     title: 실제로 어떻게 작동하는지 확인하십시오!
   cooming_soon:
     title: 곧 출시됩니다!
-    subtitle: 또는 선택 -> 수직 수경 재배 농장
+    subtitle: 수직 수경 재배 농장
   FAQ:
     title: 자주 묻는 질문
-    subtitle: 질문이있다? 저희가 도와드리겠습니다.
+    subtitle: 질문이 있습니다? 저희가 도와드리겠습니다.
     free_trial:
       question: 무료 평가판을 사용할 수 있습니까?
       answer: 예, 대기자 명단에 등록하고 strawcart가 가능할 때 일주일 동안 무료로 사용해 보세요.
@@ -38,7 +38,7 @@ components:
       error: 유효하지 않은 전화 번호
       succeed: 정확한 번호
     message:
-      text: 메시지
+      text: 메세지
       error: 빈 메시지
       succeed: 옳은
     privacy_policy:
@@ -90,7 +90,7 @@ components:
       title: 고객 서비스
       description: 24시간 내에 지원팀의 도움을 받으세요.
     sustainability:
-      title: 지속 가능성
+      title: 지속가능성
       description: 스트로카트 프로도 태양광 패널로 충전이 되기 때문에 전기 걱정은 하지 않아도 됩니다.
     customization:
       title: 커스터마이징

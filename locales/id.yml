@@ -3,7 +3,7 @@ components:
     title: lihat cara kerjanya secara nyata!
   cooming_soon:
     title: segera!
-    subtitle: atau pilih -> pertanian hidroponik vertikal
+    subtitle: pertanian hidroponik vertikal
   FAQ:
     title: pertanyaan yang sering diajukan
     subtitle: ada pertanyaan? kami siap membantu.
@@ -32,7 +32,7 @@ components:
     title: hubungi kami
     subtitle: tim kami yang ramah akan senang mendengar dari anda!
     name: nama kecil
-    surname: nama keluarga
+    surname: nama belakang
     email:
       text: surel
       error: email tidak valid

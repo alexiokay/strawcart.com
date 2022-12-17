@@ -27,7 +27,7 @@ div#footer-wrapper(class=" bottom-0 w-full xl:w-3/4 h-[19rem] flex flex-row item
                     span(class="ml-1 text-gray-500 hover:underline hover:cursor-pointer") {{ $t('components.footer.newsletter.description2') }}
             div(class="flex w-full flex-row items-center mt-6 space-x-2")
                 
-                input(class="outline-0 border-[1px] h-7 text-sm px-2 text-gray-800" :placeholder=" $t('components.footer.newsletter.placeholder ')")
+                input(class="outline-0 border-[1px] h-7 text-sm px-2 text-gray-800" :placeholder="$t('components.footer.newsletter.placeholder')")
                 button#newsletter-button(class="border-2 w-[7.5rem] h-[1.9rem] flex items-center justify-center border-gray-700 font-light text-gray-600")  {{ $t('components.footer.newsletter.button') }}
             div(class="flex hover:cursor-pointer  items-center space-x-3")
                 div(class="flex justify-center ")

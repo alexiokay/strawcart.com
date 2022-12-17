@@ -17,6 +17,7 @@
       "pinia",
       "vitest/globals",
       "@intlify/nuxt3",
+      "@iconify"
 
     ],
     "paths": {

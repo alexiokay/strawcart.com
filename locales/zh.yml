@@ -3,7 +3,7 @@ components:
     title: 看看它是如何实际工作的！
   cooming_soon:
     title: 马上就来！
-    subtitle: 或选择 -> 垂直水培农场
+    subtitle: 垂直水培农场
   FAQ:
     title: 经常问的问题
     subtitle: 有一个问题？我们随时为您提供帮助。
@@ -120,7 +120,7 @@ components:
       p2: 保护草莓免受强烈阳光照射，
 pages:
   '404':
-    title: 网页未找到
+    title: 找不到网页
   shop:
     nav: 店铺
   index:
@@ -141,7 +141,7 @@ pages:
     counter: 柜台
     increment: 增量
     decrement: 递减
-    reset: 重置
+    reset: 重启
     identity: 身份
     full_name: 全名
   getting-started:
@@ -174,8 +174,8 @@ pages:
         title: 目录列表
         description: 如果目录中没有索引文件，则显示目录内容。
   dashboard:
-    nav: 仪表板
-    title: 仪表板
+    nav: 仪表盘
+    title: 仪表盘
     index:
       nav: 家
       title: 家

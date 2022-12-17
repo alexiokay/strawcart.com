@@ -29,14 +29,17 @@ div#navbar-wrapper(class=" w-full text-gray-500 h-full flex flex-col items-cente
     NuxtLink(class=" " to="/")
       img#logo(class="h-[4.9rem] " src='/images/strawcart.webp')
     
-    div(class='flex relative w-[13.3rem] h-[3.1rem] border-[1.2px] mb-2 p-[0.5rem] space-x-2 border-gray-200 items-center justify-center  ')
+    div(v-show="route.name!=='cart'" class='flex relative w-[13.3rem] h-[3.1rem] border-[1.2px] mb-2 p-[0.5rem] space-x-2 border-gray-200 items-center justify-center  ')
       div(class="w-12 h-12 flex items-center justify-center")
         IconCart(class="w-full h-full text-gray-500")
         p(class="absolute top-[0.9rem]  text-white") 0
       p (0.00ZŁ)
       IconDown(@click="openCartDropdown" class="text-gray-500 w-5 h-5 hover:cursor-pointer")
-      button(class='h-full w-[8rem]  text-center bg-gray-500 text-white')  {{$t('components.navbar.cart').toUpperCase()}} 
+      button(@click="router.push({name: 'cart'})" class='h-full w-[8rem]  text-center bg-gray-500 text-white')  {{$t('components.navbar.cart').toUpperCase()}} 
       CartDropdown(class="hidden")
+
+    div(v-show="route.name=='cart'" class='flex relative w-[13.3rem] h-[3.1rem] border-[1.2px] mb-2 p-[0.5rem] space-x-2 border-gray-200 items-center justify-center  ')
+      p asds
   div#navbar-content2(class="  lg:w-[76%] w-[66%] h-full flex items-center justify-end md:justify-around mx-0 tracking-wider text-black font-brown  font-normal ")
     
      

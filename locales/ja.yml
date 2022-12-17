@@ -3,7 +3,7 @@ components:
     title: 実際に動く様子をご覧ください！
   cooming_soon:
     title: 近日公開！
-    subtitle: または選択 -> 垂直水耕栽培農場
+    subtitle: 縦型水耕栽培農場
   FAQ:
     title: よくある質問
     subtitle: 質問があります？私たちは助けるためにここにいます。
@@ -15,7 +15,7 @@ components:
       answer: 工具、車輪、屋根、ネジなどの追加部品を入手できるミニショップを作成しましたのでご安心ください。
     what_inside:
       question: 注文内容は？
-      answer: 空の
+      answer: 空
     delivery:
       question: 配送方法は？
       answer: dhlからお選びいただけます
@@ -41,7 +41,7 @@ components:
       succeed: 正しい
     privacy_policy:
       title: プライバシーポリシー
-      subtitle: チェックを入れると、プライバシー ポリシーの条項に同意したことになります。
+      subtitle: チェックを入れることで、プライバシー ポリシーの条項に同意したことになります。
       error: プライバシー ポリシーに同意する
       succeed: 承認済み
     button: メッセージを送る
@@ -80,7 +80,7 @@ components:
       description: 当社の製品のおかげで、収入が 20% 増加し、生産性が 30% 向上します。
     framework:
       title: 実績のあるフレームワーク
-      description: 当社の製品はお客様からテストされ、信頼されています。
+      description: 当社の製品は、クライアントによってテストされ、信頼されています
     peak_experience:
       title: ピーク エクスペリエンス
       description: 従業員の士気を高めます
@@ -112,7 +112,7 @@ components:
       p1: 倉庫のスペースを節約するように設計されています。
       p2: 倉庫のスペースを節約するように設計されています。
     straw_shop:
-      h1: 好きな場所で売る
+      h1: 好きなところで売る
       h2: 世界中の strawshop で威信を売りましょう!
       p1: オリジナルの strawcart.com 看板を使用するか、独自の看板を選択してください。折りたたみ式の 2x2 m2 サイズ。
     straw_warehouse:
@@ -133,7 +133,7 @@ pages:
     description: これは空白のページです
     just_blank_page_with_title: タイトルのある空白のページ
   configurator:
-    nav: コンフィギュレータ
+    nav: コンフィギュレーター
     title: 役職
     description: これは投稿ページです
   test:
