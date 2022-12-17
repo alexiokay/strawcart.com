@@ -1,5 +1,5 @@
 <template lang="pug">
-div(class="flex flex-col w-1/5 justify-center items-center")
+div(class="flex flex-col w-1/5 justify-center items-center focused:bg-red-500")
         div(class="flex flex-col w-[5rem] h-[5rem] items-center justify-center rounded-xl border-[1px] bg-white drop-shadow-lg border-[#434447] hover:cursor-pointer")
             Icon(:icon="props.icon" class="w-2/4 h-2/4 ")
         p(class="text-center mt-4") {{props.title}}

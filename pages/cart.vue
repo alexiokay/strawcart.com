@@ -1,7 +1,145 @@
 <template lang="pug">
-p sda
+div(class="flex flex-col w-full h-auto")
+    div(class="flex flex-row w-full h-auto mt-4")
+        div(class="flex flex-col w-[15%] h-auto")
+            p PRODUCT
+        div(class="flex flex-col w-[40%] ]h-auto")
+            input(type="checkbox" class="w-4 h-4")
+        div(class="flex flex-col w-[15%] h-auto")
+            p PRICE
+        div(class="flex flex-col w-[15%] h-auto")
+            p COUNT
+        div(class="flex flex-col w-[15%] h-auto")
+            p VALUE
+    hr(class=" w-full border-[0.8px] mt-4 mb-4 ")
+    div(class="flex flex-row w-full h-auto mt-4")
+        div(class="flex flex-col w-[15%] h-auto")
+            ExampleImg(class="w-[10rem] h-[10rem]" )
+        div(class="flex flex-col w-[40%] ]h-auto")
+            input(type="checkbox" class="w-4 h-4")
+        div(class="flex flex-col w-[15%] h-auto")
+            p 149,00 zł
+        div(class="flex flex-row w-[15%] h-auto gap-x-2")
+            input(type="number" class="w-[3rem] h-[2rem] border-[1px] focus:drop-shadow-lg ")
+            div(class="w-[2rem] h-[2rem] bg-[#434447] flex flex-col justify-center items-center text-2xl text-white")
+                p.text-center.mb-1 +
+            div(class="w-[2rem] h-[2rem] bg-[#434447] flex flex-col justify-center items-centertext-2xl text-white")
+                p.text-center.mb-1 -
+        div(class="flex flex-col w-[15%] h-auto")
+            p VALUE
+    hr(class=" w-full border-[0.8px] mt-8 mb-4 ")
+    button(class="w-[15rem] h-[3rem] bg-[#434447] text-white rounded-xl hover:cursor-pointer") Delete selected
+    hr(class=" w-full border-[0.8px] mt-4 mb-8 ")
+    div(class="flex flex-col w-full h-auto")
+    div(class="flex flex-col space-y-2 w-full")
+        h2(class="text-3xl mb-4") FORMA DOSTAWY
+        div(class="flex flex-row justify-between intems-center")
+            p Kraj dostawy Polska zmien >
+            p 0,00 zł
+        p Odbior w punkcie (zobacz mape) >
+        div(class="flex flex-row justify-start items-center space-x-3")
+            div(@click="checkBox($event)" class="w-5 h-5 rounded-full p-[1px] border-[1.5px] border-[#6f6e6e] b flex items-center justify-center hover:cursor-pointer")
+                input.checkbox-round(type="checkbox" class="w-3 h-3")
+           
+            p Paczkomaty 24/7 - 13,00 zł
+            p zobacz mape 
+        p Pozostale:
+        div(class="flex flex-row justify-start items-center space-x-3")
+            div(@click="checkBox($event)" class="w-5 h-5 rounded-full p-[1px] border-[1.5px] border-[#6f6e6e] b flex items-center justify-center hover:cursor-pointer")
+                input.checkbox-round(type="checkbox" class="w-3 h-3")
+            p Wysylka kurierem - 15,00 zł
+    hr(class=" w-full border-[0.8px] mt-16 mb-8 ")
+    div#cart-payment-method(class="flex flex-col space-y-2 w-full")
+        h2(class="text-3xl mb-4") FORMA Platnosci
+        div(class="flex flex-row justify-start items-center space-x-3")
+            div(@click="checkBox($event)"  class="w-5 h-5  rounded-full p-[1px] border-[1.5px] border-[#6f6e6e] b flex items-center justify-center hover:cursor-pointer")
+                input.checkbox-round(type="checkbox" class="w-3 h-3")
+            p PLATNOSC PRY ODBIORZE A POBRANIEM
+        div(class="flex flex-row justify-start items-center space-x-3")
+            div(@click="checkBox($event)" class="w-5 h-5  rounded-full p-[1px] border-[1.5px] border-[#6f6e6e] b flex items-center justify-center hover:cursor-pointer")
+                input.checkbox-round(type="checkbox" class="w-3 h-3")
+            p PLATNOSC KARTA
+        div(class="flex flex-row justify-start items-center space-x-3")
+            div(@click="checkBox($event)" class="w-5 h-5 rounded-full p-[1px] border-[1.5px] border-[#6f6e6e] b flex items-center justify-center hover:cursor-pointer")
+                input.checkbox-round(type="checkbox" class="w-3 h-3")
+            p SZYBKIE PLATNOSCI INTERNETOWE
+        div(class="flex flex-row justify-start items-center space-x-3")
+            div(@click="checkBox($event)" class="w-5 h-5 rounded-full p-[1px] border-[1.5px] border-[#6f6e6e] b flex items-center justify-center hover:cursor-pointer")
+                input.checkbox-round(type="checkbox" class="w-3 h-3")
+            p PLATNOSC GOOGLE PAY
+        div(class="flex flex-row justify-start items-center space-x-3")
+            div(@click="checkBox($event)" class="w-5 h-5 rounded-full p-[1px] border-[1.5px] border-[#6f6e6e] b flex items-center justify-center hover:cursor-pointer")
+                input.checkbox-round(type="checkbox" class="w-3 h-3")
+            p PREDPLATA NA KONTO ( zwykly przelew )
+      
+
+        div(class="flex flex-row justify-start items-center space-x-3")
+            div(@click="checkBox($event)" class="w-5 h-5 rounded-full p-[1px] border-[1.5px] border-[#6f6e6e] b flex items-center justify-center hover:cursor-pointer")
+                input.checkbox-round(type="checkbox" class="w-3 h-3 ")
+                
+            p Blik
+    hr(class=" w-full border-[0.8px] mt-8 mb-8 ")
+    h2(class="text-3xl") KOD RABATOWY
+    div(class="flex flex-row justify-start space-x-4 items-center")
+        div(class="flex flex-col text-sm mt-4")
+            p Jeżeli posiadasz kupon rabatowy wprowadź kod:
+            div(class="flex flex-row space-x-4 ")
+                p przypomnij kod
+                p jak uzyskac kupon
+        input(type="text" class="w-[15rem] h-[2.3rem] border-[1px] border-[#b1b1b1] l focus:shadow-xl outline-none")
+        button(class="w-[10rem] h-[2.3rem] bg-[#434447] text-white  hover:cursor-pointer") AKTYWUJ KOD
+    hr(class=" w-full border-[0.8px] mt-8 mb-8 ")
+    
+    div(class="flex flex-col md:flex-row bg-[#F6F6F6] md:bg-white w-full space-between items-between")
+        h2(class="text-3xl w-3/4") PODSUMOWANIE
+        div(class="flex flex-col w-full md:w-[30rem] space-y-4 ")
+            div.row.w-full.justify-between.items-center
+                p RAZEM
+                p(class="text-xl w-2/5") 144,00 zł
+            div.row.w-full.justify-between.items-center
+                p(class="text-xl") DO ZAPŁATY
+                p(class="text-xl w-2/5") 144,00 zł
+            div.row.w-full.justify-between.items-center
+                p Czas realizacji [dni robocze]:
+                p(class="text-xl w-2/5")  1
+            div(class="flex flex-col")
+                p(class="") Masz prawo do odstąpienia od umowy w terminie 14 dni.
+                p Koszt zwrotu zamówienia ponosi kupujący. Regulamin
+
+            button(class="w-[19rem] h-[3rem] mt-2 flex items-center justify-center ml-auto bg-[#667185] hover:bg-black text-white text-2xl smooth-color tracking-wide hover:cursor-pointer") PREJDZ DALEJ
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const checkBox = (el: any) => {
+  const AimingCheckbox = el.target.querySelector("input") as HTMLInputElement;
 
-<style lang="sass"></style>
+  const paymentMethodDiv = document.querySelector(
+    "#cart-payment-method"
+  ) as HTMLDivElement;
+
+  const checkboxes = paymentMethodDiv.querySelectorAll("input");
+
+  checkboxes.forEach((checkbox: HTMLInputElement) => {
+    checkbox.disabled = true;
+    if (checkbox.checked === true) {
+      checkbox.checked = false;
+      AimingCheckbox.checked = true;
+    } else AimingCheckbox.checked = true;
+  });
+};
+</script>
+
+<style lang="sass">
+.checkbox-round
+    background-color: white
+    border-radius: 50%
+    vertical-align: middle
+    appearance: none
+    -webkit-appearance: none
+    outline: none
+    cursor: pointer
+    pointer-events: none
+
+.checkbox-round:checked
+    background-color: gray
+</style>

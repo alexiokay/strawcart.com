@@ -40,7 +40,6 @@ div(class=" w-full h-full bg-transparent flex flex-col mt-[0.35rem] px-4 ")
 
   CoomingSoon
     Social
-
   Contact(class="mt-12")
   FAQ2(class="mt-48")
   
@@ -52,6 +51,7 @@ import "vue3-carousel/dist/carousel.css";
 import { ulotki } from "../libs/sliders";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 const { t } = useLang();
+const route = useRoute();
 
 type Advantage = {
   title: string;
@@ -128,48 +128,50 @@ const slides = ref([
 ]);
 
 onMounted(() => {
-  const advantages = document.querySelectorAll(
-    ".advantage"
-  ) as NodeListOf<HTMLElement>;
-  const products = document.querySelectorAll(
-    ".product"
-  ) as NodeListOf<HTMLElement>;
+  setTimeout(async () => {
+    const advantages = document.querySelectorAll(
+      ".advantage"
+    ) as NodeListOf<HTMLElement>;
+    const products = document.querySelectorAll(
+      ".product"
+    ) as NodeListOf<HTMLElement>;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("advantage-visible");
-          if (entry.target.classList.contains("advantage")) {
-            entry.target.classList.add("advantage-animation");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("advantage-visible");
+            if (entry.target.classList.contains("advantage")) {
+              entry.target.classList.add("advantage-animation");
+            }
+            if (entry.target.querySelector(".product .order1")) {
+              entry.target.classList.add("product-animation-left");
+            }
+            if (entry.target.querySelector(".product .order2")) {
+              entry.target.classList.add("product-animation-right");
+            }
+            return; // if we added the class, exit the function
+          } else {
+            return;
           }
-          if (entry.target.querySelector(".product .order1")) {
-            entry.target.classList.add("product-animation-left");
-          }
-          if (entry.target.querySelector(".product .order2")) {
-            entry.target.classList.add("product-animation-right");
-          }
-          return; // if we added the class, exit the function
-        } else {
-          return;
-        }
 
-        // We're not intersecting, so remove the class!
-      });
-    },
-    {
-      threshold: 1,
-    }
-  );
+          // We're not intersecting, so remove the class!
+        });
+      },
+      {
+        threshold: 1,
+      }
+    );
 
-  // Tell the observer which elements to track
+    // Tell the observer which elements to track
 
-  advantages.forEach((advantage: HTMLElement) => {
-    observer.observe(advantage);
-  });
-  products.forEach((product: HTMLElement) => {
-    observer.observe(product);
-  });
+    advantages.forEach((advantage: HTMLElement) => {
+      observer.observe(advantage);
+    });
+    products.forEach((product: HTMLElement) => {
+      observer.observe(product);
+    });
+  }, 1000);
 });
 </script>
 
@@ -216,4 +218,60 @@ onMounted(() => {
     margin: 0 5px
     -webkit-transition: background-color 0.3s
     transition: background-color 0.3s
+
+
+
+.advantage
+  opacity: 0
+
+.advantage-visible
+  opacity: 1
+
+.product
+  opacity: 0
+
+
+
+@media (prefers-reduced-motion: no-preference)
+    .advantage-animation
+        animation: something-enter 1s 1 ease-in-out forwards
+
+@media (prefers-reduced-motion: no-preference)
+    .product-animation-left
+        animation: product-enter-left 1s 1 ease-in-out forwards
+
+@media (prefers-reduced-motion: no-preference)
+    .product-animation-right
+        animation: product-enter-right 1s 1 ease-in-out forwards
+
+@keyframes wipe-enter
+    0%
+        transform: scale(0, .025)
+
+    50%
+        transform: scale(1, .025)
+
+@keyframes something-enter
+  0%
+    transform: translateY(-100px)  scale(0.55),
+    opacity: 0.2
+  100%
+    transform: translateY(0px)   scale(1),
+    opacity: 1
+
+@keyframes product-enter-left
+  0%
+    transform: translateX(-300px)
+    opacity: 0.3
+  100%
+    transform: translateX(0px)
+    opacity: 1
+
+@keyframes product-enter-right
+  0%
+    transform: translateX(300px)
+    opacity: 0.3
+  100%
+    transform: translateX(0px)
+    opacity: 1
 </style>

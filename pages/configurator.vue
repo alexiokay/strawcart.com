@@ -18,14 +18,14 @@ div(class="flex flex-row w-full")
             CloseIcon
         h1(class=" text-xl px-4 ") Configure the StrawCart
         div(class="flex flex-row w-full items-center justify-start mt-8")
-            ConfiguratorMainItem(@click="configuring = options.Wheel" title="Wheel" icon="fluent-emoji-high-contrast:wheel")
+            ConfiguratorMainItem(@click="configuring = options.Wheel" class="" title="Wheel" icon="fluent-emoji-high-contrast:wheel")
             ConfiguratorMainItem(@click="configuring = options.SolarPanels" title="Solar Panels" icon="ic:outline-solar-power")
             ConfiguratorMainItem(@click="configuring = options.Battery" title="Battery" icon="material-symbols:battery-5-bar-sharp")
             ConfiguratorMainItem(@click="configuring = options.Motor" title="Motor" icon="mdi:motor")
         hr(class=" w-[94%] border-[0.8px] border-[#DADADA] mt-8 mb-8 mx-auto  ")
         h2(class="text-xl px-4 ") {{configuring.title}}
         div(class="flex flex-row w-full justify-start mt-8")
-            ConfiguratorSecondaryItem(:icon="configuring.icon" :option="configuring.options[0]")
+            ConfiguratorSecondaryItem(:icon="configuring.icon" :option="configuring.options[0]" )
             ConfiguratorSecondaryItem(:icon="configuring.icon" :option="configuring.options[1]")
             ConfiguratorSecondaryItem(:icon="configuring.icon" :option="configuring.options[2]")
             ConfiguratorSecondaryItem(:icon="configuring.icon" :option="configuring.options[3]")

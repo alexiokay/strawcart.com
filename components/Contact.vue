@@ -4,8 +4,8 @@ div#contact(class="flex flex-col md:flex-row w-full h-auto")
         h5(class="text-6xl mb-4") {{$t('components.contact.title')}} 
         p {{$t('components.contact.subtitle')}}  
         MakeOrder(class="mt-12")
-    div(class="w-full md:w-1/2 h-96 md:h-auto bg-[#ff8e8e]")
-        <div class="map  w-full h-full" id="map" ></div>
+    div(class="w-full md:w-1/2 h-96 md:h-auto ")
+        div(class="map  w-full h-full" id="map")
 </template>
 
 <script setup lang="ts">
@@ -20,22 +20,23 @@ const loader = new Loader({
 
 const map = ref([]);
 
-onMounted(async () => {
-  await loader
-    .load()
-    .then((google: any) => {
-      map.value = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 51.133106, lng: 23.476335 },
-
-        zoom: 13,
+onMounted(() => {
+  setTimeout(async () => {
+    await loader
+      .load()
+      .then((google: any) => {
+        map.value = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 51.133106, lng: 23.476335 },
+          zoom: 13,
+        });
+      })
+      .catch((error: any) => {
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
       });
-    })
-    .catch((error: any) => {
-      console.log(error);
-    })
-    .then(function () {
-      // always executed
-    });
+  }, 1000);
 });
 </script>
 

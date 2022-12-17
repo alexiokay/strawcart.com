@@ -63,59 +63,6 @@ body
         letter-spacing: 0.18em
 
 
-.advantage
-  opacity: 0
-
-.advantage-visible
-  opacity: 1
-
-.product
-  opacity: 0
-
-
-
-@media (prefers-reduced-motion: no-preference)
-    .advantage-animation
-        animation: something-enter 1s 1 ease-in-out forwards
-
-@media (prefers-reduced-motion: no-preference)
-    .product-animation-left
-        animation: product-enter-left 1s 1 ease-in-out forwards
-
-@media (prefers-reduced-motion: no-preference)
-    .product-animation-right
-        animation: product-enter-right 1s 1 ease-in-out forwards
-
-@keyframes wipe-enter
-    0%
-        transform: scale(0, .025)
-
-    50%
-        transform: scale(1, .025)
-
-@keyframes something-enter
-  0%
-    transform: translateY(-100px)  scale(0.55),
-    opacity: 0.2
-  100%
-    transform: translateY(0px)   scale(1),
-    opacity: 1
-
-@keyframes product-enter-left
-  0%
-    transform: translateX(-300px)
-    opacity: 0.3
-  100%
-    transform: translateX(0px)
-    opacity: 1
-
-@keyframes product-enter-right
-  0%
-    transform: translateX(300px)
-    opacity: 0.3
-  100%
-    transform: translateX(0px)
-    opacity: 1
 
 
 

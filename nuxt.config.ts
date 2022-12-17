@@ -38,7 +38,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     // Static page generated on-demand, revalidates in background (ISG)
-    "/uslugi/featy/**": { ssr: false },
+
     "/**": { ssr: true },
 
     // Static page generated on-demand once (SSG - or at least mighty close) { static: true },

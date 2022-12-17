@@ -35,7 +35,8 @@ div#navbar-wrapper(class=" w-full text-gray-500 h-full flex flex-col items-cente
         p(class="absolute top-[0.9rem]  text-white") 0
       p (0.00ZŁ)
       IconDown(@click="openCartDropdown" class="text-gray-500 w-5 h-5 hover:cursor-pointer")
-      button(@click="router.push({name: 'cart'})" class='h-full w-[8rem]  text-center bg-gray-500 text-white')  {{$t('components.navbar.cart').toUpperCase()}} 
+      NuxtLink(to="/cart" class="h-full w-[8rem] ")
+        button( class='w-full h-full text-center bg-gray-500 hover:bg-black smooth-color text-white')  {{$t('components.navbar.cart').toUpperCase()}} 
       CartDropdown(class="hidden")
 
     div(v-show="route.name=='cart'" class='flex relative w-[13.3rem] h-[3.1rem] border-[1.2px] mb-2 p-[0.5rem] space-x-2 border-gray-200 items-center justify-center  ')
@@ -48,10 +49,10 @@ div#navbar-wrapper(class=" w-full text-gray-500 h-full flex flex-col items-cente
   hr(class="border-[0.1px] border-gray-200  w-full")
 
   div#navbar-content3(class=" relative w-full   px-3  text-base xl:px-5 xl:w-[82rem] h-16 flex items-center justify-end md:justify-around mx-0 tracking-wider text-black  ")
-    NavbarDropdown#dropdown(@click="openDropdown" class="dropdown-hidden hidden hover:flex absolute top-12 left-0 z-40")
+    NavbarDropdown#dropdown( class="dropdown-hidden hidden hover:flex absolute top-12 left-0 z-40")
     NuxtLink(class="smooth-color  hidden md:block  hover:text-gray-400  " to="/configurator") {{$t('pages.configurator.nav').toUpperCase()}}
     NuxtLink(class="smooth-color  hidden md:block  hover:text-gray-400  " to="/shop") {{$t('pages.shop.nav').toUpperCase()}}
-    NuxtLink(@click="openDropdown()" class="smooth-color  hidden md:block  hover:text-gray-400  " to="/") SERVICES
+    NuxtLink(@mouseenter="openDropdown()" @mouseleave="closeDropdown()" class="smooth-color  hidden md:flex text-center h-full items-center justify-center  hover:text-gray-400  " to="/") SERVICES
       
     NuxtLink(@click="toContact" class="smooth-color  hidden md:block hover:text-gray-400  " to="/") CONTACT
 
@@ -95,9 +96,12 @@ const scrollToContact = () => {
 };
 
 const openDropdown = () => {
-  document.getElementById("dropdown")?.classList.toggle("dropdown-visible");
+  document.getElementById("dropdown")?.classList.add("dropdown-visible");
 };
 
+const closeDropdown = () => {
+  document.getElementById("dropdown")?.classList.remove("dropdown-visible");
+};
 const toContact = () => {
   router.push({ name: "index" });
   setTimeout(() => {
