@@ -10,7 +10,7 @@ div(class="flex flex-row w-full")
                 p Price
                 p $890
             button(class="w-[9rem] h-[4rem] bg-[#00A3AD] rounded-xl text-white  text-xl") Add to Cart
-    div(class="flex flex-col w-[55%] h-full bg-[#ebebeb] justify-start items-start drop-shadow-[-4px_9px_9px_rgba(0,0,0,0.15)]  ")
+    div(class="flex flex-col w-[55%] h-full bg-[#ffffff] justify-start items-start]  ")
         div(class="flex flex-row w-full justify-between items-center p-8")
             button(class="border-2 border-[#434447] bg-white rounded-lg w-[7rem] h-[2.5rem] flex items-center justify-around")
                 BackIcon

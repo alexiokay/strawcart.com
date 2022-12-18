@@ -2,7 +2,7 @@
 div(class=" w-full h-full bg-transparent flex flex-col mt-[0.35rem] px-4 ")
   <!-- HEADER -->
   div(class="flex flex-col md:flex-row text-center md:text-start w-full justify-around items-center h-auto mt-16")
-    div(class="block relative h-[24rem] md:h-[28rem] w-max rounded-xl md:hover:scale-125 order-0 md:order-1")
+    div(class="z-20 block relative h-[24rem] md:h-[28rem] w-max rounded-xl md:hover:scale-125 order-0 md:order-1")
       img(class=" w-max object-contain drop-shadow-xl rounded-xl border-2   border-[#DADADA]  h-full" src="/images/strawcart-model.jpg")
       img(class="absolute top-0 right-[-65px] w-[8rem] md:w-[10rem] h-[6rem] md:h-[8rem]" src="/images/1-year-warranty.png")
     div(class="flex w-full  md:w-2/5 flex-col  order-1 md:order-0")

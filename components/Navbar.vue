@@ -18,11 +18,11 @@ div#navbar-wrapper(class=" w-full text-gray-500 h-full flex flex-col items-cente
         p.smooth-color(class="hover:cursor-pointer hover:text-gray-800")  biuro@strawcart.com 
       p.smooth-color(class="hover:cursor-pointer hover:text-gray-800")  {{$t('components.navbar.contact').toUpperCase()}}
     div(class="flex justify-end w-1/2 mt-[0.4rem] space-x-3")
-      p.smooth-color(class="hover:cursor-pointer hover:text-gray-800") {{$t('components.navbar.login').toUpperCase()}}
+      NuxtLink(to="/login").smooth-color(class="hover:cursor-pointer hover:text-gray-800") {{$t('components.navbar.login').toUpperCase()}}
       p |
-      p.smooth-color(class="hover:cursor-pointer hover:text-gray-800") {{$t('components.navbar.register').toUpperCase()}}
+      NuxtLink(to="/register").smooth-color(class="hover:cursor-pointer hover:text-gray-800") {{$t('components.navbar.register').toUpperCase()}}
       p |
-      p.smooth-color(class="hover:cursor-pointer hover:text-gray-800")  {{$t('components.navbar.safe').toUpperCase()}} (0)
+      NuxtLink(to="/clipboard").smooth-color(class="hover:cursor-pointer hover:text-gray-800")  {{$t('components.navbar.safe').toUpperCase()}} (0)
       <LanguageSwitcher />
   hr(class="border-1 border-gray-100 w-full")
   div#navbar-content1(class="flex items-center justify-between w-full h-[4.9rem] text-xs px-3  xl:px-1 xl:w-[82rem] ")
@@ -32,8 +32,8 @@ div#navbar-wrapper(class=" w-full text-gray-500 h-full flex flex-col items-cente
     div(v-show="route.name!=='cart'" class='flex relative w-[13.3rem] h-[3.1rem] border-[1.2px] mb-2 p-[0.5rem] space-x-2 border-gray-200 items-center justify-center  ')
       div(class="w-12 h-12 flex items-center justify-center")
         IconCart(class="w-full h-full text-gray-500")
-        p(class="absolute top-[0.9rem]  text-white") 0
-      p (0.00ZŁ)
+        p(class="absolute top-[0.9rem]  text-white") {{cartStore.getCartLength}}
+      p ({{cartStore.getCartTotal}}ZŁ)
       IconDown(@click="openCartDropdown" class="text-gray-500 w-5 h-5 hover:cursor-pointer")
       NuxtLink(to="/cart" class="h-full w-[8rem] ")
         button( class='w-full h-full text-center bg-gray-500 hover:bg-black smooth-color text-white')  {{$t('components.navbar.cart').toUpperCase()}} 
@@ -49,7 +49,7 @@ div#navbar-wrapper(class=" w-full text-gray-500 h-full flex flex-col items-cente
   hr(class="border-[0.1px] border-gray-200  w-full")
 
   div#navbar-content3(class=" relative w-full   px-3  text-base xl:px-5 xl:w-[82rem] h-16 flex items-center justify-end md:justify-around mx-0 tracking-wider text-black  ")
-    NavbarDropdown#dropdown( class="dropdown-hidden hidden hover:flex absolute top-12 left-0 z-40")
+    NavbarDropdown#dropdown(@click="openDropdown" class="dropdown-hidden hidden hover:flex absolute top-12 left-0 z-40")
     NuxtLink(class="smooth-color  hidden md:block  hover:text-gray-400  " to="/configurator") {{$t('pages.configurator.nav').toUpperCase()}}
     NuxtLink(class="smooth-color  hidden md:block  hover:text-gray-400  " to="/shop") {{$t('pages.shop.nav').toUpperCase()}}
     NuxtLink(@mouseenter="openDropdown()" @mouseleave="closeDropdown()" class="smooth-color  hidden md:flex text-center h-full items-center justify-center  hover:text-gray-400  " to="/") SERVICES
@@ -58,10 +58,10 @@ div#navbar-wrapper(class=" w-full text-gray-500 h-full flex flex-col items-cente
 
     
   hr(class="border-[0.1px] border-gray-200 w-full")
-  div#navbar-content2(v-if="route.name!== 'index'" class=" w-full h-12 text-xs px-3  xl:px-5 xl:w-[82rem]  space-x-2 flex items-end justify-start  mx-0 tracking-wider text-gray-500 font-normal ")
+  div#navbar-content2(v-if="isRouteRestriceted === true" class=" w-full h-12 text-xs px-3  xl:px-5 xl:w-[82rem]  space-x-2 flex items-end justify-start  mx-0 tracking-wider text-gray-500 font-normal ")
     IconHouse
-    p(class="font-extra") >> {{route.name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}}
-   
+    p( class="font-extra") >> {{route.name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}}
+  h1(v-if="route.name === 'cart'" class="w-full flex items-center justify-start  xl:w-[82rem] text-3xl text-black mt-8") CART
 
   
 </template>
@@ -72,11 +72,22 @@ import IconCart from "~icons/ph/shopping-cart-simple-fill";
 import IconDown from "~icons/material-symbols/expand-circle-down-rounded";
 import EmailIcon from "~icons/mi/email";
 import { onMounted } from "vue";
+import { useCartStore } from "../stores/Cart";
 const route = useRoute();
 const router = useRouter();
 const locale = useState<string>("locale.setting");
 const { t } = useLang();
 
+let cartStore: any = ref(useCartStore());
+
+if (process.client) {
+  cartStore.value = useCartStore();
+}
+
+const isRouteRestriceted = computed(() => {
+  if (route.name == "cart" || route.name == "index") return false;
+  else return true;
+});
 let mobileMenu = ref(false);
 
 const openCartDropdown = () => {

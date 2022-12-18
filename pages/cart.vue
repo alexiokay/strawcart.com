@@ -7,28 +7,28 @@ div(class="flex flex-col w-full h-auto")
             input(type="checkbox" class="w-4 h-4")
         div(class="flex flex-col w-[15%] h-auto")
             p PRICE
-        div(class="flex flex-col w-[15%] h-auto")
+        div(class="flex flex-col justify-center items-center w-[15%] h-auto")
             p COUNT
-        div(class="flex flex-col w-[15%] h-auto")
+        div(class="flex flex-col justify-center items-end w-[15%] h-auto")
             p VALUE
     hr(class=" w-full border-[0.8px] mt-4 mb-4 ")
-    div(class="flex flex-row w-full h-auto mt-4")
+    div(v-for="item in cart" :key='item.title' class="flex flex-row w-full h-auto mt-4")
         div(class="flex flex-col w-[15%] h-auto")
-            ExampleImg(class="w-[10rem] h-[10rem]" )
-        div(class="flex flex-col w-[40%] ]h-auto")
+            img(class="w-[10rem] h-[10rem]" :src="item.image" )
+        div(class="flex flex-col w-[40%] ] h-auto")
             input(type="checkbox" class="w-4 h-4")
         div(class="flex flex-col w-[15%] h-auto")
-            p 149,00 zł
-        div(class="flex flex-row w-[15%] h-auto gap-x-2")
-            input(type="number" class="w-[3rem] h-[2rem] border-[1px] focus:drop-shadow-lg ")
-            div(class="w-[2rem] h-[2rem] bg-[#434447] flex flex-col justify-center items-center text-2xl text-white")
+            p {{item.price}} zł
+        div(class="flex flex-row  justify-center items-start w-[15%] h-auto gap-x-2")
+            input(type="number" class="w-[3rem] h-[2rem] border-[1px] focus:drop-shadow-lg text-center" :value="item.quantity" min="1" @change="item.quantity = $event.target.value")
+            div(@click="cartStore.increaseItemQuantity(item.id)" @mousedown="increaseQuantity(item.id)" @mouseup="stopHolding()"  @mouseleave="stopHolding()" class="w-[2rem] h-[2rem] bg-[#434447] select-none hover:cursor-pointer flex flex-col justify-center items-center text-2xl text-white")
                 p.text-center.mb-1 +
-            div(class="w-[2rem] h-[2rem] bg-[#434447] flex flex-col justify-center items-centertext-2xl text-white")
+            div(@click="item.quantity >= 2?   item.quantity-- : item.quantity"  v-on:mousedown="decreaseQuantity(item)" v-on:mouseup="stopHolding()"  @mouseleave="stopHolding()" class="select-none w-[2rem] h-[2rem] bg-[#434447] hover:cursor-pointer flex flex-col justify-center items-centertext-2xl text-white")
                 p.text-center.mb-1 -
-        div(class="flex flex-col w-[15%] h-auto")
-            p VALUE
+        div(class="flex flex-col w-[15%] justify-start items-end h-auto")
+            p {{item.price * item.quantity}} zł
     hr(class=" w-full border-[0.8px] mt-8 mb-4 ")
-    button(class="w-[15rem] h-[3rem] bg-[#434447] text-white rounded-xl hover:cursor-pointer") Delete selected
+    button(@click="cartStore.clearCart()" class="w-[10rem] h-[2rem] bg-[#b4b4b4] text-white  hover:cursor-pointer") DELETE SELECTED
     hr(class=" w-full border-[0.8px] mt-4 mb-8 ")
     div(class="flex flex-col w-full h-auto")
     div(class="flex flex-col space-y-2 w-full")
@@ -83,7 +83,7 @@ div(class="flex flex-col w-full h-auto")
     div(class="flex flex-row justify-start space-x-4 items-center")
         div(class="flex flex-col text-sm mt-4")
             p Jeżeli posiadasz kupon rabatowy wprowadź kod:
-            div(class="flex flex-row space-x-4 ")
+            div(class="flex flex-row space-x-4 text-[#6f6e6e]")
                 p przypomnij kod
                 p jak uzyskac kupon
         input(type="text" class="w-[15rem] h-[2.3rem] border-[1px] border-[#b1b1b1] l focus:shadow-xl outline-none")
@@ -91,14 +91,16 @@ div(class="flex flex-col w-full h-auto")
     hr(class=" w-full border-[0.8px] mt-8 mb-8 ")
     
     div(class="flex flex-col md:flex-row bg-[#F6F6F6] md:bg-white w-full space-between items-between")
-        h2(class="text-3xl w-3/4") PODSUMOWANIE
+        div(class="flex flex-col  w-3/4 justify-between items-between h-auto")
+            h2(class="text-3xl") PODSUMOWANIE
+            p(class="text-2xl") KONTYNUUJ ZAKUPY
         div(class="flex flex-col w-full md:w-[30rem] space-y-4 ")
             div.row.w-full.justify-between.items-center
                 p RAZEM
-                p(class="text-xl w-2/5") 144,00 zł
+                p(class="text-xl w-2/5") {{cartStore.getCartTotal}} zł
             div.row.w-full.justify-between.items-center
                 p(class="text-xl") DO ZAPŁATY
-                p(class="text-xl w-2/5") 144,00 zł
+                p(class="text-xl w-2/5") {{cartStore.getCartTotal}} zł
             div.row.w-full.justify-between.items-center
                 p Czas realizacji [dni robocze]:
                 p(class="text-xl w-2/5")  1
@@ -110,6 +112,52 @@ div(class="flex flex-col w-full h-auto")
 </template>
 
 <script setup lang="ts">
+import { useCartStore } from "../stores/Cart";
+
+let cartStore: any = ref(useCartStore());
+let cart = ref(useCartStore().getCart);
+
+onMounted(() => {
+  if (process.client) {
+    cartStore.value = useCartStore();
+    cart.value = useCartStore().getCart;
+  }
+});
+
+console.log(cart.value);
+
+let interval: any = null;
+
+const increaseQuantity = (itemId: any) => {
+  if (process.client)
+    setTimeout(() => {
+      interval = setInterval(() => {
+        cartStore.value.increaseItemQuantity(itemId);
+      }, 130);
+    }, 300);
+};
+
+const getCart = (itemId: any) => {
+  if (process.client) {
+    return cartStore.value.getCart;
+  }
+};
+
+const decreaseQuantity = (item: any) => {
+  setTimeout(() => {
+    interval = setInterval(() => {
+      if (item.quantity >= 2) {
+        item.quantity--;
+      }
+    }, 130);
+  }, 300);
+};
+
+const stopHolding = () => {
+  clearInterval(interval);
+  interval = null;
+};
+
 const checkBox = (el: any) => {
   const AimingCheckbox = el.target.querySelector("input") as HTMLInputElement;
 
