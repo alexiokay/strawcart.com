@@ -16,7 +16,7 @@ div(class="flex flex-col w-full h-auto")
         div(class="flex flex-col w-[15%] h-auto")
             img(class="w-[10rem] h-[10rem]" :src="item.image" )
         div(class="flex flex-col w-[40%] ] h-auto")
-            input(type="checkbox" class="w-4 h-4")
+            input(@change="selectItem(item.id) " type="checkbox" class="w-4 h-4")
         div(class="flex flex-col w-[15%] h-auto")
             p {{item.price}} zł
         div(class="flex flex-row  justify-center items-start w-[15%] h-auto gap-x-2")
@@ -28,7 +28,7 @@ div(class="flex flex-col w-full h-auto")
         div(class="flex flex-col w-[15%] justify-start items-end h-auto")
             p {{item.price * item.quantity}} zł
     hr(class=" w-full border-[0.8px] mt-8 mb-4 ")
-    button(@click="cartStore.clearCart()" class="w-[10rem] h-[2rem] bg-[#b4b4b4] text-white  hover:cursor-pointer") DELETE SELECTED
+    button(@click="removeSelected()" class="w-[10rem] h-[2rem] bg-[#b4b4b4] text-white  hover:cursor-pointer") DELETE SELECTED
     hr(class=" w-full border-[0.8px] mt-4 mb-8 ")
     div(class="flex flex-col w-full h-auto")
     div(class="flex flex-col space-y-2 w-full")
@@ -113,14 +113,13 @@ div(class="flex flex-col w-full h-auto")
 
 <script setup lang="ts">
 import { useCartStore } from "../stores/Cart";
+import type { Ref } from "vue";
 
 let cartStore: any = ref(useCartStore());
-let cart = ref(useCartStore().getCart);
-
+let cart = ref(computed(() => useCartStore().getCart));
 onMounted(() => {
   if (process.client) {
     cartStore.value = useCartStore();
-    cart.value = useCartStore().getCart;
   }
 });
 
@@ -143,6 +142,18 @@ const getCart = (itemId: any) => {
   }
 };
 
+const selectedItems: Ref<any> = ref([]);
+
+const selectItem = (item: any) => {
+  if (selectedItems.value.includes(item)) {
+    selectedItems.value = selectedItems.value.filter(
+      (selectedItem: any) => selectedItem !== item
+    );
+  } else {
+    selectedItems.value.push(item);
+  }
+  console.log(selectedItems.value);
+};
 const decreaseQuantity = (item: any) => {
   setTimeout(() => {
     interval = setInterval(() => {
@@ -158,6 +169,12 @@ const stopHolding = () => {
   interval = null;
 };
 
+const removeSelected = () => {
+  selectedItems.value.forEach((item: any) => {
+    cartStore.value.removeFromCart(item);
+  });
+  selectedItems.value = [];
+};
 const checkBox = (el: any) => {
   const AimingCheckbox = el.target.querySelector("input") as HTMLInputElement;
 

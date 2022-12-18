@@ -53,6 +53,12 @@ import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 const { t } = useLang();
 const route = useRoute();
 
+definePageMeta({
+  pageTransition: {
+    name: "page",
+  },
+});
+
 type Advantage = {
   title: string;
   description: string;
