@@ -1,6 +1,6 @@
 script
 <template lang="pug">
-div(style="display: flex, flex-direction: column " class="flex flex-col justify-center items-center ")
+div(id="default" style="display: flex, flex-direction: column " class="flex flex-col justify-center items-center ")
     <Navbar/>
     div#contact-mini(class=" hidden xl:flex xl:flex-col mt-5 xl:fixed xl:top-[79vh] xl:left-[2%] z-20 ")
       IconPhone( class=" w-9 h-9 text-blue-600 hover:cursor-pointer")
