@@ -1,5 +1,5 @@
 <template lang="pug">
-div#footer-wrapper(class=" bottom-0 w-full xl:w-3/4 h-[19rem] flex flex-row items-between justify-around mx-0 bg-white") 
+div#footer-wrapper(class=" bottom-0 w-full xl:w-3/4 h-[19rem] flex flex-col md:flex-row items-between justify-around mx-0 bg-white") 
 
         div(class="flex w-2/5  xl:w-full ml-2 mt-5 xl:ml-6 flex-col text-gray-600 xl:items-start text-sm ")
             div(class="items-start space-y-[0.4rem] ")
