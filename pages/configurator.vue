@@ -1,7 +1,7 @@
 <template lang="pug">
 div(class="flex flex-row w-full")
     div(class="flex flex-col w-[45%] h-auto overflow-hidden  justify-between items-center")
-        div(class="block h-[24rem] mt-12 lg:scale-125 md:h-[28rem] w-full rounded-xl ")
+        div(class="block h-[24rem] mt-12 md:h-[28rem] w-full rounded-xl ")
             img(class=" w-full object-contain rounded-xl h-full" src="/images/strawcart-model.jpg")
           
         div(class="flex flex-row w-full justify-around mb-4")

@@ -199,6 +199,7 @@ const toContact = () => {
   animation: growDown 200ms ease-in-out forwards
   transform-origin: top center
 
+
 @keyframes rotateMenu
   0%
     transform: rotateX(-90deg)

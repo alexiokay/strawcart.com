@@ -40,7 +40,7 @@ export default defineNuxtConfig({
     // Static page generated on-demand, revalidates in background (ISG)
 
     "/**": { ssr: true },
-
+    "/cart": { ssr: false },
     // Static page generated on-demand once (SSG - or at least mighty close) { static: true },
 
     // Render these routes on the client (SPA) { ssr: false },
@@ -86,6 +86,12 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
+      stripePrices: {
+        strawtote: "1",
+        strawbox: "2",
+        strawshop: "1",
+        strawstore: "1",
+      },
       GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY,
       cwd: process.cwd(),
       BASE_URL: process.env.BASE_URL,

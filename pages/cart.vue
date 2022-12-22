@@ -170,10 +170,12 @@ const stopHolding = () => {
 };
 
 const removeSelected = () => {
-  selectedItems.value.forEach((item: any) => {
-    cartStore.value.removeFromCart(item);
-  });
-  selectedItems.value = [];
+  if (process.client) {
+    selectedItems.value.forEach((item: any) => {
+      cartStore.value.removeFromCart(item);
+    });
+    selectedItems.value = [];
+  }
 };
 const checkBox = (el: any) => {
   const AimingCheckbox = el.target.querySelector("input") as HTMLInputElement;

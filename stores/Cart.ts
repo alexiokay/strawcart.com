@@ -14,13 +14,49 @@ export type CartItem = {
   price: number;
   quantity: number;
   image: string;
+  stripePriceId: string;
+};
+
+type StrawTote = {
+  id: 0;
+  title: "Straw Tote";
+  price: 110;
+  quantity: number;
+  image: "/images/products/strawtote2.png";
+  stripePriceId: string;
+};
+
+type StrawBox = {
+  id: 0;
+  title: "Straw Tote";
+  price: 0.5;
+  quantity: number;
+  image: "/images/products/strawbox.png";
+  stripePriceId: string;
+};
+
+type StrawShop = {
+  id: 0;
+  title: "StrawShop";
+  price: 250;
+  quantity: number;
+  image: "/images/products/strawShop.png";
+  stripePriceId: string;
+};
+
+type StrawStore = {
+  id: 0;
+  title: "Straw Store";
+  price: 300;
+  quantity: number;
+  image: "/images/products/strawWarehouse.png";
+  stripePriceId: string;
 };
 
 export const useCartStore = defineStore("cart", {
   state: () => {
     return {
       // all these properties will have their type inferred automatically
-
       cart: useStorage("cart", [
         {
           id: uniqid(),
@@ -47,7 +83,18 @@ export const useCartStore = defineStore("cart", {
   },
   actions: {
     addToCart(item: CartItem) {
-      this.cart.push(item);
+      const cartItem = this.cart.find(
+        (cartItem) => cartItem.title === item.title
+      );
+      if (cartItem) {
+        cartItem.quantity += 1;
+        console.log(cartItem);
+        console.log(
+          this.cart.find((cartItem) => cartItem.title === item.title)
+        );
+      } else {
+        this.cart.push(item);
+      }
     },
     removeFromCart(_item: any) {
       console.log(_item);
