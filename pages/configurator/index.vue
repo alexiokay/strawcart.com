@@ -3,16 +3,16 @@ div(class="flex flex-row w-full")
     div(class="flex flex-col w-[45%] h-auto overflow-hidden  justify-between items-center")
         div(class="block h-[24rem] mt-12 md:h-[28rem] w-full rounded-xl ")
             img(class=" w-full object-contain rounded-xl h-full" src="/images/strawcart-model.jpg")
-          
+            
         div(class="flex flex-row w-full justify-around mb-4")
-           
+            
             div(class="flex flex-col")
-                p Price
-                p ${{priveOverall}}
-            button(class="w-[9rem] h-[4rem] bg-[#00A3AD] rounded-xl text-white  text-xl") Add to Cart
-    div(class="flex flex-col w-[55%] h-full bg-[#ffffff] justify-start items-start]  ")
+                p.text-3xl Price:
+                p.text-xl ${{priveOverall}}
+            button( class="w-[9rem] h-[4rem] bg-[#00A3AD] rounded-xl text-white  text-xl") Add to Cart
+    div(v-if="step===2" class="flex flex-col w-[55%] h-full bg-[#ffffff] justify-start items-start]  ")
         div(class="flex flex-row w-full justify-between items-center p-8")
-            button(class="border-2 border-[#434447] bg-white rounded-lg w-[7rem] h-[2.5rem] flex items-center justify-around")
+            button(@click="step = 1" class="border-2 border-[#434447] bg-white rounded-lg w-[7rem] h-[2.5rem] flex items-center justify-around")
                 BackIcon
                 p Back
             CloseIcon
@@ -44,13 +44,34 @@ div(class="flex flex-row w-full")
             ConfiguratorSecondaryItem(@click="choosed.Motor.option = options.Motor.options[1]" :icon="configuring.icon" :isActive="choosed.Motor.option.id === 2? true: false" :option="configuring.options[1]")
             ConfiguratorSecondaryItem(@click="choosed.Motor.option = options.Motor.options[2]" :icon="configuring.icon" :isActive="choosed.Motor.option.id === 3? true: false" :option="configuring.options[2]")
             ConfiguratorSecondaryItem(@click="choosed.Motor.option = options.Motor.options[3]" :icon="configuring.icon" :isActive="choosed.Motor.option.id === 4? true: false" :option="configuring.options[3]")
-        div(class="flex flex-row w-full h-[6rem] mt-9")
-            div(class="border-2 text-white text-xl font-medium bg-[#8D8D8D] w-[55%] h-full] flex items-center justify-around")
-                p From 890$
+        
+               
+    div(v-if="step===1" class="flex flex-col w-[55%] h-full bg-[#ffffff] justify-start items-start gap-y-4 py-8  ")
 
-            button(class="border-2  text-xl font-medium  w-[45%] h-full flex items-center justify-around")
-                p Next ->
+        h1(class="text-2xl") Select your StrawCart model
 
+        div#strawcart-basic(@click="changeModelToBasic" :class="{'bg-blue-500 text-white': choosedModel === 'Basic' }" class="flex w-4/5 h-24 border-2 rounded-xl p-2 gap-x-3 mt-4 hover:cursor-pointer")
+            img(class="w-auto h-full" src="/images/strawcart-model.jpg")
+            flex.col.w-full
+                div.row.justify-between.w-full
+                    h2(class="text-2xl font-medium") Strawcart Basic
+                    p(class="text-xl font-medium") 770$
+                h3(class="text-lg font-normal") Traditional economic but still powerfull version of strawcart. 
+        div#strawcart-pro(@click="changeModelToPro" :class="{'bg-yellow-500 text-white': choosedModel === 'Pro' }"  class="flex w-4/5 h-24 border-2 rounded-xl p-2 gap-x-3 hover:cursor-pointer")
+            img(class="w-auto h-full" src="/images/strawcart-model.jpg")
+            flex.col.w-full
+                div.row.justify-between.w-full
+                    h2(class="text-2xl font-medium") Strawcart Pro
+                    p(class="text-xl font-medium") 1400$
+                h3(class="text-lg font-normal") Modern equipped with engine, sustainable energy version. Most efficient and prestige.
+        div#strawcart-custom(@click="changeModelToCustom" :class="{'bg-green-500 text-white': choosedModel === 'Custom' }"  class="flex w-4/5 h-24 border-2 rounded-xl p-2 gap-x-3 hover:cursor-pointer")
+            img(class="w-auto h-full" src="/images/strawcart-model.jpg")
+            flex.col.w-full
+                div.row.justify-between.w-full
+                    h2(class="text-2xl font-medium") Custom
+                    p(class="text-xl font-medium") from 770$
+                h3(class="text-lg font-normal") Choose your own configuration and get your own Strawcart.
+        
 </template>
 
 <script setup lang="ts">
@@ -60,7 +81,9 @@ import WheelIcon from "~icons/fluent-emoji-high-contrast/wheel";
 import SolarIcon from "~icons/ic/outline-solar-power";
 import BatteryIcon from "~icons/material-symbols/battery-5-bar-sharp";
 import MotorIcon from "~icons/mdi/motor";
-
+import type { Ref } from "vue";
+const step = ref(1);
+const choosedModel: Ref<"Basic" | "Pro" | "Custom"> = ref("Basic");
 const priveOverall = computed(
   () =>
     choosed.value.Wheel.option.price +
@@ -68,6 +91,27 @@ const priveOverall = computed(
     choosed.value.Battery.option.price +
     choosed.value.Motor.option.price
 );
+
+const changeModelToPro = () => {
+  choosed.value.Wheel.option = options.Wheel.options[3];
+  choosed.value.SolarPanels.option = options.SolarPanels.options[3];
+  choosed.value.Battery.option = options.Battery.options[3];
+  choosed.value.Motor.option = options.Motor.options[3];
+  choosedModel.value = "Pro";
+};
+const changeModelToBasic = () => {
+  choosed.value.Wheel.option = options.Wheel.options[0];
+  choosed.value.SolarPanels.option = options.SolarPanels.options[0];
+  choosed.value.Battery.option = options.Battery.options[0];
+  choosed.value.Motor.option = options.Motor.options[0];
+  choosedModel.value = "Basic";
+};
+
+const changeModelToCustom = () => {
+  step.value = 2;
+  choosedModel.value = "Custom";
+};
+const config = useRuntimeConfig();
 
 const options = {
   Wheel: {

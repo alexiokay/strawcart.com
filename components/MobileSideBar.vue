@@ -11,7 +11,12 @@ div#sidebar-open( class='w-3/5 h-screen gap-y-2 px-4 flex flex-col bg-white drop
     hr
     NuxtLink(@click="closeMobileNavbar" class="smooth-color    hover:text-gray-400  " to="/shop") {{$t('pages.shop.nav').toUpperCase()}}
     hr
-    NuxtLink(@click="closeMobileNavbar" class="smooth-color   hover:text-gray-400  " to="/") SERVICES
+    NuxtLink(@click="showServices" class="smooth-color   hover:text-gray-400  " to="/") SERVICES
+    div#services-mobile-dropdown(class=" hidden flex-col space-y-2 ml-4")
+        NuxtLink(@click="closeMobileNavbar" class="smooth-color   hover:text-gray-400  " to="/about") ToiToiServices
+        NuxtLink(@click="closeMobileNavbar" class="smooth-color   hover:text-gray-400  " to="/about") Water Irrigation System
+        NuxtLink(@click="closeMobileNavbar" class="smooth-color   hover:text-gray-400  " to="/about") Work Agency
+   
     hr
     NuxtLink(@click="toContact" class="smooth-color   hover:text-gray-400  " to="/") CONTACT
     hr
@@ -25,6 +30,12 @@ import CloseIcon from "~icons/ic/outline-close";
 const { t } = useLang();
 const route = useRoute();
 const router = useRouter();
+
+const showServices = () => {
+  const services = document?.getElementById("services-mobile-dropdown");
+  services?.classList.toggle("hidden");
+  services?.classList.toggle("flex");
+};
 
 let store: any = ref(useMainStore());
 

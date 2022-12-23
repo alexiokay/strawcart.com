@@ -55,10 +55,10 @@ div#navbar-wrapper(class=" drop-shadow-xl md:drop-shadow-none w-full text-gray-5
 
     
   hr(class="border-[0.1px] border-gray-200 w-full hidden md:flex")
-  div#navbar-content2(v-if="isRouteRestriceted === true" class=" w-full h-12 text-xs px-3  xl:px-5 xl:w-[82rem]  space-x-2 flex items-end justify-start  mx-0 tracking-wider text-gray-500 font-normal ")
+  div#navbar-content2(v-if="isRouteRestriceted === true" class=" w-full h-12 text-xs px-3  xl:px-5 xl:w-[82rem]  space-x-2 hidden md:flex items-end justify-start  mx-0 tracking-wider text-gray-500 font-normal ")
     IconHouse
-    p( class="font-extra") >> {{route.name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}}
-  h1(v-if="route.name === 'cart'" class="w-full flex items-center justify-start  xl:w-[82rem] text-3xl text-black mt-8") CART
+    p( class="font-extra") >> {{route.name.replace(/-/g, ' ').replace(/\b\w/g, (l: any) => l.toUpperCase())}}
+  <!-- h1(v-if="route.name === 'cart'" class="w-full flex items-center justify-start  xl:w-[82rem] text-3xl text-black mt-8") CART -->
 
   
 </template>

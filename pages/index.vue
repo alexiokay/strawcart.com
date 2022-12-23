@@ -10,7 +10,7 @@ div(class=" w-full h-full bg-transparent flex flex-col mt-[0.35rem] px-4 ")
       h2(class="leading-[173%] tracking-[2%]  text-lg  md:text-[20px] mt-8") {{$t('components.strawcart_showcase.description')}}
       div(class="flex w-full justify-start space-x-12 text-lg  items-center mt-12")
       
-        button(class="bg-[#CE3030] tracking-[12%] text-2xl drop-shadow-[0.2rem_0.3rem_0.2rem_rgba(0,0,0,0.5)] text-white rounded-lg w-32 font-itim min-h-[3rem]" ) {{$t('components.strawcart_showcase.button')}}
+        NuxtLink(to="/configurator" class="bg-[#CE3030] flex items-center justify-center tracking-[12%] text-2xl drop-shadow-[0.2rem_0.3rem_0.2rem_rgba(0,0,0,0.5)] text-white rounded-lg w-32 font-itim min-h-[3rem]" ) {{$t('components.strawcart_showcase.button')}}
         p(class="underline") {{$t('components.strawcart_showcase.pricing')}}
    
   <!-- ADVANTAGES -->
