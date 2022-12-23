@@ -8,7 +8,7 @@ div(class="flex flex-row w-full")
            
             div(class="flex flex-col")
                 p Price
-                p $890
+                p ${{priveOverall}}
             button(class="w-[9rem] h-[4rem] bg-[#00A3AD] rounded-xl text-white  text-xl") Add to Cart
     div(class="flex flex-col w-[55%] h-full bg-[#ffffff] justify-start items-start]  ")
         div(class="flex flex-row w-full justify-between items-center p-8")
@@ -18,17 +18,32 @@ div(class="flex flex-row w-full")
             CloseIcon
         h1(class=" text-xl px-4 ") Configure the StrawCart
         div(class="flex flex-row w-full items-center justify-start mt-8")
-            ConfiguratorMainItem(@click="configuring = options.Wheel" class="" title="Wheel" icon="fluent-emoji-high-contrast:wheel")
-            ConfiguratorMainItem(@click="configuring = options.SolarPanels" title="Solar Panels" icon="ic:outline-solar-power")
-            ConfiguratorMainItem(@click="configuring = options.Battery" title="Battery" icon="material-symbols:battery-5-bar-sharp")
-            ConfiguratorMainItem(@click="configuring = options.Motor" title="Motor" icon="mdi:motor")
+            ConfiguratorMainItem(@click="configuring = options.Wheel" :isActive="configuring.title === 'Wheels'? true: false" title="Wheel" icon="fluent-emoji-high-contrast:wheel")
+            ConfiguratorMainItem(@click="configuring = options.SolarPanels" :isActive="configuring.title === 'Solar Panels'? true: false"  title="Solar Panels" icon="ic:outline-solar-power")
+            ConfiguratorMainItem(@click="configuring = options.Battery" :isActive="configuring.title === 'Batteries'?true: false"  title="Battery" icon="material-symbols:battery-5-bar-sharp")
+            ConfiguratorMainItem(@click="configuring = options.Motor" :isActive="configuring.title === 'Motor'?true: false"  title="Motor" icon="mdi:motor")
         hr(class=" w-[94%] border-[0.8px] border-[#DADADA] mt-8 mb-8 mx-auto  ")
         h2(class="text-xl px-4 ") {{configuring.title}}
-        div(class="flex flex-row w-full justify-start mt-8")
-            ConfiguratorSecondaryItem(:icon="configuring.icon" :option="configuring.options[0]" )
-            ConfiguratorSecondaryItem(:icon="configuring.icon" :option="configuring.options[1]")
-            ConfiguratorSecondaryItem(:icon="configuring.icon" :option="configuring.options[2]")
-            ConfiguratorSecondaryItem(:icon="configuring.icon" :option="configuring.options[3]")
+        div(v-if="configuring.title==='Wheels'" class="flex flex-row w-full justify-start mt-8")
+            ConfiguratorSecondaryItem(@click="choosed.Wheel.option = options.Wheel.options[0]" :icon="configuring.icon" :isActive="choosed.Wheel.option.id === 1? true: false"  :option="configuring.options[0]" )
+            ConfiguratorSecondaryItem(@click="choosed.Wheel.option = options.Wheel.options[1]" :icon="configuring.icon" :isActive="choosed.Wheel.option.id === 2? true: false" :option="configuring.options[1]")
+            ConfiguratorSecondaryItem(@click="choosed.Wheel.option = options.Wheel.options[2]" :icon="configuring.icon" :isActive="choosed.Wheel.option.id === 3? true: false" :option="configuring.options[2]")
+            ConfiguratorSecondaryItem(@click="choosed.Wheel.option = options.Wheel.options[3]" :icon="configuring.icon" :isActive="choosed.Wheel.option.id === 4? true: false" :option="configuring.options[3]")
+        div(v-if="configuring.title==='Solar Panels'"  class="flex flex-row w-full justify-start mt-8")
+            ConfiguratorSecondaryItem(@click="choosed.SolarPanels.option = options.SolarPanels.options[0]" :icon="configuring.icon" :isActive="choosed.SolarPanels.option.id === 1? true: false"  :option="configuring.options[0]" )
+            ConfiguratorSecondaryItem(@click="choosed.SolarPanels.option = options.SolarPanels.options[1]" :icon="configuring.icon" :isActive="choosed.SolarPanels.option.id === 2? true: false" :option="configuring.options[1]")
+            ConfiguratorSecondaryItem(@click="choosed.SolarPanels.option = options.SolarPanels.options[2]" :icon="configuring.icon" :isActive="choosed.SolarPanels.option.id === 3? true: false" :option="configuring.options[2]")
+            ConfiguratorSecondaryItem(@click="choosed.SolarPanels.option = options.SolarPanels.options[3]" :icon="configuring.icon" :isActive="choosed.SolarPanels.option.id === 4? true: false" :option="configuring.options[3]")
+        div(v-if="configuring.title==='Batteries'" class="flex flex-row w-full justify-start mt-8")
+            ConfiguratorSecondaryItem(@click="choosed.Battery.option = options.Battery.options[0]" :icon="configuring.icon" :isActive="choosed.Battery.option.id === 1? true: false"  :option="configuring.options[0]" )
+            ConfiguratorSecondaryItem(@click="choosed.Battery.option = options.Battery.options[1]" :icon="configuring.icon" :isActive="choosed.Battery.option.id === 2? true: false" :option="configuring.options[1]")
+            ConfiguratorSecondaryItem(@click="choosed.Battery.option = options.Battery.options[2]" :icon="configuring.icon" :isActive="choosed.Battery.option.id === 3? true: false" :option="configuring.options[2]")
+            ConfiguratorSecondaryItem(@click="choosed.Battery.option = options.Battery.options[3]" :icon="configuring.icon" :isActive="choosed.Battery.option.id === 4? true: false" :option="configuring.options[3]")
+        div(v-if="configuring.title==='Motor'"  class="flex flex-row w-full justify-start mt-8")
+            ConfiguratorSecondaryItem(@click="choosed.Motor.option = options.Motor.options[0]" :icon="configuring.icon" :isActive="choosed.Motor.option.id === 1? true: false"  :option="configuring.options[0]" )
+            ConfiguratorSecondaryItem(@click="choosed.Motor.option = options.Motor.options[1]" :icon="configuring.icon" :isActive="choosed.Motor.option.id === 2? true: false" :option="configuring.options[1]")
+            ConfiguratorSecondaryItem(@click="choosed.Motor.option = options.Motor.options[2]" :icon="configuring.icon" :isActive="choosed.Motor.option.id === 3? true: false" :option="configuring.options[2]")
+            ConfiguratorSecondaryItem(@click="choosed.Motor.option = options.Motor.options[3]" :icon="configuring.icon" :isActive="choosed.Motor.option.id === 4? true: false" :option="configuring.options[3]")
         div(class="flex flex-row w-full h-[6rem] mt-9")
             div(class="border-2 text-white text-xl font-medium bg-[#8D8D8D] w-[55%] h-full] flex items-center justify-around")
                 p From 890$
@@ -46,31 +61,54 @@ import SolarIcon from "~icons/ic/outline-solar-power";
 import BatteryIcon from "~icons/material-symbols/battery-5-bar-sharp";
 import MotorIcon from "~icons/mdi/motor";
 
+const priveOverall = computed(
+  () =>
+    choosed.value.Wheel.option.price +
+    choosed.value.SolarPanels.option.price +
+    choosed.value.Battery.option.price +
+    choosed.value.Motor.option.price
+);
+
 const options = {
   Wheel: {
     title: "Wheels",
     icon: "fluent-emoji-high-contrast:wheel",
-    options: ["Wheel 1", "Wheel 2", "Wheel 3", "Wheel 4"],
+    options: [
+      { id: 1, title: "Wheel 1", price: 200 },
+      { id: 2, title: "Wheel 2", price: 300 },
+      { id: 3, title: "Wheel 3", price: 400 },
+      { id: 4, title: "Wheel 4", price: 500 },
+    ],
   },
   SolarPanels: {
     title: "Solar Panels",
     icon: "ic:outline-solar-power",
     options: [
-      "Solar Panel 1",
-      "Solar Panel 2",
-      "Solar Panel 3",
-      "Solar Panel 4",
+      { id: 1, title: "Wheel 1", price: 200 },
+      { id: 2, title: "Wheel 2", price: 400 },
+      { id: 3, title: "Wheel 3", price: 500 },
+      { id: 4, title: "Wheel 4", price: 600 },
     ],
   },
   Battery: {
     title: "Batteries",
     icon: "material-symbols:battery-5-bar-sharp",
-    options: ["Battery 1", "Battery 2", "Battery 3", "Battery 4"],
+    options: [
+      { id: 1, title: "Wheel 1", price: 200 },
+      { id: 2, title: "Wheel 2", price: 300 },
+      { id: 3, title: "Wheel 3", price: 400 },
+      { id: 4, title: "Wheel 4", price: 500 },
+    ],
   },
   Motor: {
     title: "Motor",
     icon: "mdi:motor",
-    options: ["Motor 1", "Motor 2", "Motor 3", "Motor 4"],
+    options: [
+      { id: 1, title: "Wheel 1", price: 200 },
+      { id: 2, title: "Wheel 2", price: 300 },
+      { id: 3, title: "Wheel 3", price: 400 },
+      { id: 4, title: "Wheel 4", price: 500 },
+    ],
   },
 };
 const configuring = ref(options.Wheel);
@@ -79,18 +117,22 @@ const choosed = ref({
   Wheel: {
     title: "Wheels",
     price: 350,
+    option: options.Wheel.options[0],
   },
   SolarPanels: {
     title: "Solar Panels",
     price: 550,
+    option: options.SolarPanels.options[0],
   },
   Battery: {
     title: "Batteries",
     price: 250,
+    option: options.Battery.options[0],
   },
   Motor: {
     title: "Motor",
     price: 450,
+    option: options.Motor.options[0],
   },
 });
 const locale = useState<string>("locale.setting");

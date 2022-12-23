@@ -90,7 +90,12 @@ if (process.client) {
 }
 
 const isRouteRestriceted = computed(() => {
-  if (route.name == "cart" || route.name == "index") return false;
+  if (
+    route.name == "cart" ||
+    route.name == "index" ||
+    route.name == "configurator"
+  )
+    return false;
   else return true;
 });
 
